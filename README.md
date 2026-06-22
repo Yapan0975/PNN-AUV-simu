@@ -4,7 +4,7 @@ Simulation and benchmark code for the paper:
 
 > **A Leakage-Free Multi-Method Benchmark for Underwater Acoustic Target Recognition,
 > and an Energy–Accuracy Analysis of a Simulated Physical-Reservoir Sensing Front End**
-> (submitted to *Applied Acoustics*).
+> (manuscripts in preparation, 2026).
 
 This repository contains every simulation script and the per-claim raw result
 (`*_results.json`) that each number, table, and figure in the paper is computed
