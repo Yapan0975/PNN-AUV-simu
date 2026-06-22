@@ -1,0 +1,76 @@
+{
+  "what": "Mode-count sweep of the SPICE reservoir: accuracy vs analog power",
+  "iara_5class_recording_level": true,
+  "seeds": 15,
+  "sweep": [
+    {
+      "n_modes": 4,
+      "bal_mean": 0.299,
+      "bal_ci95": [
+        0.205,
+        0.395
+      ],
+      "analog_mW": 35.6,
+      "opamps": 13
+    },
+    {
+      "n_modes": 8,
+      "bal_mean": 0.348,
+      "bal_ci95": [
+        0.246,
+        0.453
+      ],
+      "analog_mW": 65.7,
+      "opamps": 25
+    },
+    {
+      "n_modes": 12,
+      "bal_mean": 0.357,
+      "bal_ci95": [
+        0.254,
+        0.465
+      ],
+      "analog_mW": 95.8,
+      "opamps": 37
+    },
+    {
+      "n_modes": 16,
+      "bal_mean": 0.328,
+      "bal_ci95": [
+        0.226,
+        0.432
+      ],
+      "analog_mW": 125.9,
+      "opamps": 49
+    },
+    {
+      "n_modes": 24,
+      "bal_mean": 0.387,
+      "bal_ci95": [
+        0.28,
+        0.496
+      ],
+      "analog_mW": 186.1,
+      "opamps": 73
+    },
+    {
+      "n_modes": 32,
+      "bal_mean": 0.398,
+      "bal_ci95": [
+        0.289,
+        0.51
+      ],
+      "analog_mW": 246.3,
+      "opamps": 97
+    }
+  ],
+  "full_32mode_bal": 0.398,
+  "energy_optimal": {
+    "n_modes": 32,
+    "bal": 0.398,
+    "analog_mW": 246.3,
+    "vs_full_mW": 246.3
+  },
+  "verdict": "32 modes hold 5-class accuracy at 0.398 (full 32-mode 0.398) for 246 mW analog vs 246 mW for the full bank -- a 1.0x front-end power cut at <=0.01 accuracy cost.",
+  "wall_clock_s": 60.8
+}

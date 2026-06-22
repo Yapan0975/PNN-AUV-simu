@@ -1,0 +1,315 @@
+{
+  "what": "Circuit-level (ngspice) extraction of the resonator reservoir bank",
+  "topology": "Tow-Thomas 3-op-amp state-variable bandpass per mode",
+  "opamp_model": "single-pole macromodel ~ TI OPA2376 (GBW 5.5MHz, A0 134dB, en 7.5nV/rtHz, Icc 760uA/ch)",
+  "n_modes": 32,
+  "Q_nominal": 40.0,
+  "C_nF": 100.0,
+  "mode_f0_target_Hz": [
+    12.0,
+    13.79,
+    15.85,
+    18.22,
+    20.95,
+    24.08,
+    27.68,
+    31.81,
+    36.57,
+    42.03,
+    48.31,
+    55.53,
+    63.83,
+    73.37,
+    84.33,
+    96.93,
+    111.42,
+    128.07,
+    147.21,
+    169.2,
+    194.49,
+    223.55,
+    256.96,
+    295.36,
+    339.5,
+    390.24,
+    448.55,
+    515.58,
+    592.63,
+    681.19,
+    782.99,
+    900.0
+  ],
+  "Q_meas_mean": 39.77,
+  "Q_meas_min": 34.35,
+  "Q_meas_max": 41.07,
+  "Q_droop_pct_mean": 0.6,
+  "per_mode": [
+    {
+      "mode": 0,
+      "f0_target": 12.0,
+      "f0_meas": 11.98,
+      "Q_meas": 38.91,
+      "gain_dB": -0.07,
+      "noise_uVrms": 3385.446
+    },
+    {
+      "mode": 1,
+      "f0_target": 13.793,
+      "f0_meas": 13.796,
+      "Q_meas": 39.48,
+      "gain_dB": 0.0,
+      "noise_uVrms": 3549.432
+    },
+    {
+      "mode": 2,
+      "f0_target": 15.855,
+      "f0_meas": 15.776,
+      "Q_meas": 34.35,
+      "gain_dB": -0.63,
+      "noise_uVrms": 3770.141
+    },
+    {
+      "mode": 3,
+      "f0_target": 18.224,
+      "f0_meas": 18.251,
+      "Q_meas": 38.43,
+      "gain_dB": -0.06,
+      "noise_uVrms": 3712.977
+    },
+    {
+      "mode": 4,
+      "f0_target": 20.947,
+      "f0_meas": 20.892,
+      "Q_meas": 37.79,
+      "gain_dB": -0.18,
+      "noise_uVrms": 3682.359
+    },
+    {
+      "mode": 5,
+      "f0_target": 24.077,
+      "f0_meas": 24.027,
+      "Q_meas": 38.29,
+      "gain_dB": -0.11,
+      "noise_uVrms": 3740.796
+    },
+    {
+      "mode": 6,
+      "f0_target": 27.676,
+      "f0_meas": 27.658,
+      "Q_meas": 39.67,
+      "gain_dB": -0.0,
+      "noise_uVrms": 3893.031
+    },
+    {
+      "mode": 7,
+      "f0_target": 31.811,
+      "f0_meas": 31.784,
+      "Q_meas": 39.45,
+      "gain_dB": -0.01,
+      "noise_uVrms": 4195.66
+    },
+    {
+      "mode": 8,
+      "f0_target": 36.565,
+      "f0_meas": 36.569,
+      "Q_meas": 39.85,
+      "gain_dB": 0.01,
+      "noise_uVrms": 4270.749
+    },
+    {
+      "mode": 9,
+      "f0_target": 42.029,
+      "f0_meas": 42.015,
+      "Q_meas": 39.86,
+      "gain_dB": 0.01,
+      "noise_uVrms": 4172.305
+    },
+    {
+      "mode": 10,
+      "f0_target": 48.31,
+      "f0_meas": 48.286,
+      "Q_meas": 39.84,
+      "gain_dB": 0.01,
+      "noise_uVrms": 4213.457
+    },
+    {
+      "mode": 11,
+      "f0_target": 55.53,
+      "f0_meas": 55.548,
+      "Q_meas": 39.95,
+      "gain_dB": 0.01,
+      "noise_uVrms": 4379.141
+    },
+    {
+      "mode": 12,
+      "f0_target": 63.828,
+      "f0_meas": 63.799,
+      "Q_meas": 39.95,
+      "gain_dB": 0.01,
+      "noise_uVrms": 4737.249
+    },
+    {
+      "mode": 13,
+      "f0_target": 73.366,
+      "f0_meas": 73.371,
+      "Q_meas": 40.01,
+      "gain_dB": 0.02,
+      "noise_uVrms": 5111.312
+    },
+    {
+      "mode": 14,
+      "f0_target": 84.33,
+      "f0_meas": 84.262,
+      "Q_meas": 39.89,
+      "gain_dB": 0.0,
+      "noise_uVrms": 4955.568
+    },
+    {
+      "mode": 15,
+      "f0_target": 96.932,
+      "f0_meas": 96.969,
+      "Q_meas": 40.05,
+      "gain_dB": 0.02,
+      "noise_uVrms": 4950.805
+    },
+    {
+      "mode": 16,
+      "f0_target": 111.418,
+      "f0_meas": 111.492,
+      "Q_meas": 40.03,
+      "gain_dB": 0.01,
+      "noise_uVrms": 5130.724
+    },
+    {
+      "mode": 17,
+      "f0_target": 128.068,
+      "f0_meas": 127.995,
+      "Q_meas": 40.03,
+      "gain_dB": 0.02,
+      "noise_uVrms": 5540.131
+    },
+    {
+      "mode": 18,
+      "f0_target": 147.206,
+      "f0_meas": 147.138,
+      "Q_meas": 40.09,
+      "gain_dB": 0.03,
+      "noise_uVrms": 6247.873
+    },
+    {
+      "mode": 19,
+      "f0_target": 169.205,
+      "f0_meas": 169.252,
+      "Q_meas": 40.18,
+      "gain_dB": 0.04,
+      "noise_uVrms": 6232.978
+    },
+    {
+      "mode": 20,
+      "f0_target": 194.49,
+      "f0_meas": 194.501,
+      "Q_meas": 40.22,
+      "gain_dB": 0.05,
+      "noise_uVrms": 6105.804
+    },
+    {
+      "mode": 21,
+      "f0_target": 223.555,
+      "f0_meas": 223.546,
+      "Q_meas": 40.26,
+      "gain_dB": 0.06,
+      "noise_uVrms": 6270.66
+    },
+    {
+      "mode": 22,
+      "f0_target": 256.963,
+      "f0_meas": 256.881,
+      "Q_meas": 40.27,
+      "gain_dB": 0.06,
+      "noise_uVrms": 6725.317
+    },
+    {
+      "mode": 23,
+      "f0_target": 295.363,
+      "f0_meas": 295.333,
+      "Q_meas": 40.34,
+      "gain_dB": 0.07,
+      "noise_uVrms": 7656.458
+    },
+    {
+      "mode": 24,
+      "f0_target": 339.501,
+      "f0_meas": 339.56,
+      "Q_meas": 40.39,
+      "gain_dB": 0.08,
+      "noise_uVrms": 8210.012
+    },
+    {
+      "mode": 25,
+      "f0_target": 390.236,
+      "f0_meas": 390.223,
+      "Q_meas": 40.46,
+      "gain_dB": 0.1,
+      "noise_uVrms": 7835.066
+    },
+    {
+      "mode": 26,
+      "f0_target": 448.552,
+      "f0_meas": 448.478,
+      "Q_meas": 40.52,
+      "gain_dB": 0.11,
+      "noise_uVrms": 7870.216
+    },
+    {
+      "mode": 27,
+      "f0_target": 515.584,
+      "f0_meas": 515.479,
+      "Q_meas": 40.6,
+      "gain_dB": 0.13,
+      "noise_uVrms": 8302.968
+    },
+    {
+      "mode": 28,
+      "f0_target": 592.632,
+      "f0_meas": 592.547,
+      "Q_meas": 40.7,
+      "gain_dB": 0.15,
+      "noise_uVrms": 9319.289
+    },
+    {
+      "mode": 29,
+      "f0_target": 681.194,
+      "f0_meas": 681.167,
+      "Q_meas": 40.81,
+      "gain_dB": 0.17,
+      "noise_uVrms": 10737.354
+    },
+    {
+      "mode": 30,
+      "f0_target": 782.991,
+      "f0_meas": 782.824,
+      "Q_meas": 40.93,
+      "gain_dB": 0.2,
+      "noise_uVrms": 10024.017
+    },
+    {
+      "mode": 31,
+      "f0_target": 900.0,
+      "f0_meas": 899.828,
+      "Q_meas": 41.07,
+      "gain_dB": 0.23,
+      "noise_uVrms": 9160.541
+    }
+  ],
+  "noise_uVrms_mean": 5877.807,
+  "POWER": {
+    "topology_opamps_per_section": 3,
+    "total_opamps": 97,
+    "icc_per_ch_uA": 760.0,
+    "vsup_V": 3.3,
+    "analog_frontend_mW_measured": 246.3,
+    "ledger_guess_afe_bias_readout_mW": 13.0,
+    "note": "This REPLACES the energy ledger's ~13 mW guess (afe 6 + bias 4 + readout 3) for the analog front end with a circuit-grounded 246 mW: holding the paper's Q=40 across 32 modes needs 3 op-amps/section, and a real low-power op-amp draws ~760 uA each. The energy advantage shrinks accordingly and motivates a leaner (fewer-mode / lower-Q) design."
+  },
+  "wall_clock_s": 1.8
+}

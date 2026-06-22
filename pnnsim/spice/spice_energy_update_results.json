@@ -1,0 +1,119 @@
+{
+  "what": "Energy ledger recomputed with circuit-measured analog front-end power",
+  "digital_unchanged": {
+    "shared_frontend_ADC_DSP_mW": 300.0,
+    "continuous_SoC_mW": 1378.0,
+    "continuous_edgeNPU_mW": 403.0
+  },
+  "variants": {
+    "full": {
+      "tag": "full_32mode_Q40",
+      "analog_frontend_mW": 246.0,
+      "pnn_base_mW": 275.5,
+      "continuous_digital_SoC_mW": 1378.0,
+      "continuous_digital_edgeNPU_mW": 403.0,
+      "ratio_vs_SoC": 5.0,
+      "ratio_vs_edgeNPU": 1.46,
+      "crossover_duty_pct": 18.5,
+      "dutycycled": {
+        "d=0.01": {
+          "digital_mW": 42.5,
+          "pnn_mW": 275.6,
+          "ratio": 0.15,
+          "pnn_wins": false
+        },
+        "d=0.05": {
+          "digital_mW": 96.5,
+          "pnn_mW": 276.2,
+          "ratio": 0.35,
+          "pnn_wins": false
+        },
+        "d=0.10": {
+          "digital_mW": 164.0,
+          "pnn_mW": 277.0,
+          "ratio": 0.59,
+          "pnn_wins": false
+        },
+        "d=0.30": {
+          "digital_mW": 434.0,
+          "pnn_mW": 280.0,
+          "ratio": 1.55,
+          "pnn_wins": true
+        }
+      }
+    },
+    "lean": {
+      "tag": "lean_16mode",
+      "analog_frontend_mW": 126.0,
+      "pnn_base_mW": 155.5,
+      "continuous_digital_SoC_mW": 1378.0,
+      "continuous_digital_edgeNPU_mW": 403.0,
+      "ratio_vs_SoC": 8.9,
+      "ratio_vs_edgeNPU": 2.59,
+      "crossover_duty_pct": 9.5,
+      "dutycycled": {
+        "d=0.01": {
+          "digital_mW": 42.5,
+          "pnn_mW": 155.7,
+          "ratio": 0.27,
+          "pnn_wins": false
+        },
+        "d=0.05": {
+          "digital_mW": 96.5,
+          "pnn_mW": 156.2,
+          "ratio": 0.62,
+          "pnn_wins": false
+        },
+        "d=0.10": {
+          "digital_mW": 164.0,
+          "pnn_mW": 157.0,
+          "ratio": 1.04,
+          "pnn_wins": true
+        },
+        "d=0.30": {
+          "digital_mW": 434.0,
+          "pnn_mW": 160.0,
+          "ratio": 2.71,
+          "pnn_wins": true
+        }
+      }
+    },
+    "original_reference": {
+      "tag": "original_estimate_for_reference",
+      "analog_frontend_mW": 13.0,
+      "pnn_base_mW": 42.5,
+      "continuous_digital_SoC_mW": 1378.0,
+      "continuous_digital_edgeNPU_mW": 403.0,
+      "ratio_vs_SoC": 32.4,
+      "ratio_vs_edgeNPU": 9.48,
+      "crossover_duty_pct": 1.0,
+      "dutycycled": {
+        "d=0.01": {
+          "digital_mW": 42.5,
+          "pnn_mW": 42.6,
+          "ratio": 1.0,
+          "pnn_wins": false
+        },
+        "d=0.05": {
+          "digital_mW": 96.5,
+          "pnn_mW": 43.2,
+          "ratio": 2.23,
+          "pnn_wins": true
+        },
+        "d=0.10": {
+          "digital_mW": 164.0,
+          "pnn_mW": 44.0,
+          "ratio": 3.73,
+          "pnn_wins": true
+        },
+        "d=0.30": {
+          "digital_mW": 434.0,
+          "pnn_mW": 47.0,
+          "ratio": 9.23,
+          "pnn_wins": true
+        }
+      }
+    }
+  },
+  "headline_change": "Replacing the 13 mW analog estimate with the circuit-measured 246 mW (full 32-mode Q=40 bank) moves the continuous-digital advantage from ~27x/9x to 5.0x (vs SoC) / 1.46x (vs edge-NPU), and pushes the duty-cycle crossover from ~1.5% to 18.5%: against a fairly duty-cycled digital system the analog front end now wins only above ~18% vessel-presence duty. A leaner 16-mode bank (126 mW) recovers part of this (8.9x/2.59x, crossover 9.5%) at within-CI accuracy."
+}

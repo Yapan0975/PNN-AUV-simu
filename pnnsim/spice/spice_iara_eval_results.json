@@ -1,0 +1,132 @@
+{
+  "what": "Circuit-level (ngspice) reservoir vs abstract closed-form reservoir on real IARA",
+  "dataset": "IARA (Zenodo 10.5281/zenodo.15758636), recording-level 30% test, 15 seeds",
+  "front_ends": {
+    "ideal_shape": "paper's closed-form |H|^2, no noise",
+    "spice_shape": "ngspice Tow-Thomas bank |H|^2, no noise",
+    "spice_noisy": "ngspice bank + thermal floor + 8-bit ADC"
+  },
+  "granularity_sweep": {
+    "2": {
+      "ideal_shape": {
+        "bal_mean": 0.648,
+        "bal_std": 0.043,
+        "macro_f1_mean": 0.669,
+        "bal_ci95": [
+          0.521,
+          0.784
+        ]
+      },
+      "spice_shape": {
+        "bal_mean": 0.642,
+        "bal_std": 0.042,
+        "macro_f1_mean": 0.662,
+        "bal_ci95": [
+          0.516,
+          0.776
+        ]
+      },
+      "spice_noisy": {
+        "bal_mean": 0.647,
+        "bal_std": 0.04,
+        "macro_f1_mean": 0.667,
+        "bal_ci95": [
+          0.52,
+          0.781
+        ]
+      }
+    },
+    "3": {
+      "ideal_shape": {
+        "bal_mean": 0.498,
+        "bal_std": 0.059,
+        "macro_f1_mean": 0.491,
+        "bal_ci95": [
+          0.357,
+          0.641
+        ]
+      },
+      "spice_shape": {
+        "bal_mean": 0.505,
+        "bal_std": 0.063,
+        "macro_f1_mean": 0.5,
+        "bal_ci95": [
+          0.36,
+          0.648
+        ]
+      },
+      "spice_noisy": {
+        "bal_mean": 0.505,
+        "bal_std": 0.056,
+        "macro_f1_mean": 0.499,
+        "bal_ci95": [
+          0.36,
+          0.649
+        ]
+      }
+    },
+    "4": {
+      "ideal_shape": {
+        "bal_mean": 0.43,
+        "bal_std": 0.049,
+        "macro_f1_mean": 0.424,
+        "bal_ci95": [
+          0.307,
+          0.554
+        ]
+      },
+      "spice_shape": {
+        "bal_mean": 0.444,
+        "bal_std": 0.044,
+        "macro_f1_mean": 0.438,
+        "bal_ci95": [
+          0.319,
+          0.57
+        ]
+      },
+      "spice_noisy": {
+        "bal_mean": 0.445,
+        "bal_std": 0.044,
+        "macro_f1_mean": 0.44,
+        "bal_ci95": [
+          0.32,
+          0.571
+        ]
+      }
+    },
+    "5": {
+      "ideal_shape": {
+        "bal_mean": 0.402,
+        "bal_std": 0.051,
+        "macro_f1_mean": 0.395,
+        "bal_ci95": [
+          0.293,
+          0.514
+        ]
+      },
+      "spice_shape": {
+        "bal_mean": 0.398,
+        "bal_std": 0.046,
+        "macro_f1_mean": 0.391,
+        "bal_ci95": [
+          0.289,
+          0.51
+        ]
+      },
+      "spice_noisy": {
+        "bal_mean": 0.399,
+        "bal_std": 0.049,
+        "macro_f1_mean": 0.392,
+        "bal_ci95": [
+          0.29,
+          0.511
+        ]
+      }
+    }
+  },
+  "delta_5class_spice_minus_ideal": -0.004,
+  "delta_5class_spicenoisy_minus_ideal": -0.003,
+  "analog_frontend_mW_measured": 246.276,
+  "verdict": "At 5-class the circuit-measured reservoir scores 0.398 (noiseless) / 0.399 (with device noise+ADC) vs the abstract reservoir's 0.402: a -0.004/-0.003 change. The abstract model is a faithful stand-in for the real filter shapes; the circuit forces its correction mainly on ENERGY (246 mW measured vs 13 mW guessed).",
+  "wall_clock_s": 89.7
+}
