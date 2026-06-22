@@ -1,0 +1,22 @@
+# large / regenerable / external data
+*.npz
+IARA-data/
+*.wav
+*.zip
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# latex / build artefacts
+*.aux
+*.log
+*.out
+*.spl
+*.synctex.gz
+
+# os
+.DS_Store
+Thumbs.db

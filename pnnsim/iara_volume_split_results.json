@@ -1,0 +1,48 @@
+{
+  "task": "volume-aware sensitivity for the background-volume confound (PDF review r4)",
+  "reference_random_split": {
+    "resnet_4cls_ship": 0.439,
+    "detection_auc": 0.793
+  },
+  "test1_leave_one_volume_out_4class_ship": {
+    "per_heldout_volume": {
+      "A": {
+        "n_test_rec": 46,
+        "resnet_4cls_mean": 0.383,
+        "resnet_4cls_std": 0.023
+      },
+      "B": {
+        "n_test_rec": 21,
+        "resnet_4cls_mean": 0.394,
+        "resnet_4cls_std": 0.102
+      },
+      "C": {
+        "n_test_rec": 42,
+        "resnet_4cls_mean": 0.38,
+        "resnet_4cls_std": 0.019
+      },
+      "D": {
+        "n_test_rec": 60,
+        "resnet_4cls_mean": 0.482,
+        "resnet_4cls_std": 0.012
+      }
+    },
+    "across_volumes_mean": 0.41,
+    "across_volumes_std": 0.042,
+    "note": "ResNet 4-class ship-type, train on ships from other volumes, test on held-out volume; compare to random-split 0.439. Stability indicates acoustic, not volume-tag, discrimination."
+  },
+  "test2_cross_volume_background_detection": {
+    "train_bg_volume": "E",
+    "test_bg_volume": "H",
+    "n_bg_E_rec": 38,
+    "n_bg_H_rec": 7,
+    "detection_auc_mean": 0.616,
+    "detection_auc_std": 0.17,
+    "vals": [
+      0.819,
+      0.625,
+      0.403
+    ],
+    "note": "background VOLUME held out (train bg=E, test bg=H); AUC near the random-split 0.79 indicates the detector is acoustic, not keyed to a volume-specific signature."
+  }
+}

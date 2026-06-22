@@ -1,0 +1,63 @@
+{
+  "dataset": "IARA log-mel (real recordings), leakage-free by-recording split",
+  "model": "log-mel CNN2D",
+  "k": 5,
+  "n_seeds": 4,
+  "days": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30
+  ],
+  "drift_model": {
+    "detuning_melbins": 4,
+    "biofouling_atten_logdb": 2.5,
+    "noise_std": 0.6,
+    "note": "progressive over 30 days"
+  },
+  "recal": {
+    "every_days": 5,
+    "ref_windows": 160,
+    "steps": 40
+  },
+  "no_recal_mean": [
+    0.429,
+    0.339,
+    0.232,
+    0.236,
+    0.221,
+    0.232,
+    0.232
+  ],
+  "no_recal_std": [
+    0.061,
+    0.048,
+    0.021,
+    0.029,
+    0.026,
+    0.027,
+    0.033
+  ],
+  "with_recal_mean": [
+    0.429,
+    0.425,
+    0.396,
+    0.414,
+    0.418,
+    0.386,
+    0.357
+  ],
+  "with_recal_std": [
+    0.061,
+    0.042,
+    0.067,
+    0.044,
+    0.057,
+    0.034,
+    0.01
+  ],
+  "headline": "On real IARA log-mel (5-class, leakage-free), 30-day progressive drift degrades the day-0 accuracy 0.429 to 0.232+/-0.033 without recalibration; periodic surface-window recalibration (every 5 d, 160 refs, 40 steps) holds it at 0.357+/-0.010 on day 30, recovering +0.125."
+}

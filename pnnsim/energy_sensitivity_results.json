@@ -1,0 +1,110 @@
+{
+  "note": "nominal point estimates (mW); headline 27x/9x are Monte-Carlo means with CIs in the itemised ledger",
+  "pnn_continuous_mW_nominal": 45.5,
+  "front_end_sweep": [
+    {
+      "front_end_mW": 25,
+      "ratio_vs_SoC": 24.2,
+      "ratio_vs_edge_NPU": 2.8
+    },
+    {
+      "front_end_mW": 50,
+      "ratio_vs_SoC": 24.8,
+      "ratio_vs_edge_NPU": 3.4
+    },
+    {
+      "front_end_mW": 100,
+      "ratio_vs_SoC": 25.9,
+      "ratio_vs_edge_NPU": 4.5
+    },
+    {
+      "front_end_mW": 175,
+      "ratio_vs_SoC": 27.5,
+      "ratio_vs_edge_NPU": 6.1
+    },
+    {
+      "front_end_mW": 300,
+      "ratio_vs_SoC": 30.3,
+      "ratio_vs_edge_NPU": 8.9
+    },
+    {
+      "front_end_mW": 350,
+      "ratio_vs_SoC": 31.4,
+      "ratio_vs_edge_NPU": 10.0
+    },
+    {
+      "front_end_mW": 600,
+      "ratio_vs_SoC": 36.9,
+      "ratio_vs_edge_NPU": 15.5
+    }
+  ],
+  "dedicated_ASIC_baseline": {
+    "front_end_mW": 150.0,
+    "note": "ADC 120 + spectral ASIC ~30, with edge-NPU classifier",
+    "total_mW": 253.0,
+    "ratio_vs_PNN": 5.6,
+    "with_subnyquist_ADC_60mW": 4.2
+  },
+  "analog_support_sweep": [
+    {
+      "pnn_support_mW": 46,
+      "ratio_vs_SoC": 30.0,
+      "ratio_vs_edge_NPU": 8.8
+    },
+    {
+      "pnn_support_mW": 100,
+      "ratio_vs_SoC": 13.8,
+      "ratio_vs_edge_NPU": 4.0
+    },
+    {
+      "pnn_support_mW": 200,
+      "ratio_vs_SoC": 6.9,
+      "ratio_vs_edge_NPU": 2.0
+    }
+  ],
+  "duty_cycle_sweep": [
+    {
+      "duty_pct": 0.1,
+      "dutycycled_digital_mW": 30.4,
+      "analog_pnn_mW": 45.5,
+      "savings_factor": 0.67
+    },
+    {
+      "duty_pct": 0.5,
+      "dutycycled_digital_mW": 35.8,
+      "analog_pnn_mW": 45.6,
+      "savings_factor": 0.78
+    },
+    {
+      "duty_pct": 1.0,
+      "dutycycled_digital_mW": 42.5,
+      "analog_pnn_mW": 45.6,
+      "savings_factor": 0.93
+    },
+    {
+      "duty_pct": 1.5,
+      "dutycycled_digital_mW": 49.2,
+      "analog_pnn_mW": 45.7,
+      "savings_factor": 1.08
+    },
+    {
+      "duty_pct": 5.0,
+      "dutycycled_digital_mW": 96.5,
+      "analog_pnn_mW": 46.2,
+      "savings_factor": 2.09
+    },
+    {
+      "duty_pct": 10.0,
+      "dutycycled_digital_mW": 164.0,
+      "analog_pnn_mW": 47.0,
+      "savings_factor": 3.49
+    },
+    {
+      "duty_pct": 30.0,
+      "dutycycled_digital_mW": 434.0,
+      "analog_pnn_mW": 50.0,
+      "savings_factor": 8.68
+    }
+  ],
+  "crossover_duty_pct_nominal": 1.24
+}

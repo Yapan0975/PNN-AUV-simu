@@ -1,0 +1,16 @@
+{
+  "n_seeds": 6,
+  "metric": "continuous closed-loop spectral abscissa alpha=max Re eig(A_c)",
+  "alpha_mean": -0.036819296459945174,
+  "alpha_std": 0.0242558187503854,
+  "alpha_max": 0.0009822312875002236,
+  "frac_stable": 0.8333333333333334,
+  "vals": [
+    0.00098,
+    -0.07916,
+    -0.0454,
+    -0.03884,
+    -0.03688,
+    -0.02162
+  ]
+}

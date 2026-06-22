@@ -1,0 +1,466 @@
+{
+  "dataset": "IARA (Zenodo 10.5281/zenodo.15758636), full archive A-H",
+  "classes_5": [
+    "Background",
+    "Cargo",
+    "Tanker",
+    "Tug",
+    "Special Craft"
+  ],
+  "split": "recording-level (no segment leakage), 30% test",
+  "n_seeds_psd": 15,
+  "n_seeds_logmel": 5,
+  "metric": "recording-level; balanced accuracy + macro-F1 + recording-level CLUSTER bootstrap 95% CI (per-seed, averaged)",
+  "granularity_sweep": {
+    "2": {
+      "digital_psd_mlp": {
+        "bal_mean": 0.756,
+        "bal_std": 0.073,
+        "macro_f1_mean": 0.78,
+        "macro_f1_std": 0.072,
+        "bal_ci95": [
+          0.622,
+          0.886
+        ]
+      },
+      "pnn_pat": {
+        "bal_mean": 0.659,
+        "bal_std": 0.045,
+        "macro_f1_mean": 0.682,
+        "macro_f1_std": 0.052,
+        "bal_ci95": [
+          0.531,
+          0.793
+        ]
+      },
+      "frozen_reservoir": {
+        "bal_mean": 0.648,
+        "bal_std": 0.057,
+        "macro_f1_mean": 0.67,
+        "macro_f1_std": 0.067,
+        "bal_ci95": [
+          0.522,
+          0.78
+        ]
+      },
+      "insilico": {
+        "bal_mean": 0.698,
+        "bal_std": 0.067,
+        "macro_f1_mean": 0.681,
+        "macro_f1_std": 0.057,
+        "bal_ci95": [
+          0.559,
+          0.831
+        ]
+      }
+    },
+    "3": {
+      "digital_psd_mlp": {
+        "bal_mean": 0.537,
+        "bal_std": 0.065,
+        "macro_f1_mean": 0.534,
+        "macro_f1_std": 0.062,
+        "bal_ci95": [
+          0.391,
+          0.681
+        ]
+      },
+      "pnn_pat": {
+        "bal_mean": 0.502,
+        "bal_std": 0.056,
+        "macro_f1_mean": 0.497,
+        "macro_f1_std": 0.057,
+        "bal_ci95": [
+          0.357,
+          0.646
+        ]
+      },
+      "frozen_reservoir": {
+        "bal_mean": 0.481,
+        "bal_std": 0.061,
+        "macro_f1_mean": 0.472,
+        "macro_f1_std": 0.065,
+        "bal_ci95": [
+          0.339,
+          0.622
+        ]
+      },
+      "insilico": {
+        "bal_mean": 0.495,
+        "bal_std": 0.066,
+        "macro_f1_mean": 0.456,
+        "macro_f1_std": 0.063,
+        "bal_ci95": [
+          0.368,
+          0.622
+        ]
+      }
+    },
+    "4": {
+      "digital_psd_mlp": {
+        "bal_mean": 0.438,
+        "bal_std": 0.059,
+        "macro_f1_mean": 0.436,
+        "macro_f1_std": 0.059,
+        "bal_ci95": [
+          0.313,
+          0.563
+        ]
+      },
+      "pnn_pat": {
+        "bal_mean": 0.438,
+        "bal_std": 0.067,
+        "macro_f1_mean": 0.433,
+        "macro_f1_std": 0.067,
+        "bal_ci95": [
+          0.313,
+          0.566
+        ]
+      },
+      "frozen_reservoir": {
+        "bal_mean": 0.438,
+        "bal_std": 0.056,
+        "macro_f1_mean": 0.431,
+        "macro_f1_std": 0.057,
+        "bal_ci95": [
+          0.317,
+          0.561
+        ]
+      },
+      "insilico": {
+        "bal_mean": 0.388,
+        "bal_std": 0.047,
+        "macro_f1_mean": 0.358,
+        "macro_f1_std": 0.049,
+        "bal_ci95": [
+          0.276,
+          0.502
+        ]
+      }
+    },
+    "5": {
+      "digital_psd_mlp": {
+        "bal_mean": 0.4,
+        "bal_std": 0.049,
+        "macro_f1_mean": 0.401,
+        "macro_f1_std": 0.049,
+        "bal_ci95": [
+          0.288,
+          0.514
+        ]
+      },
+      "pnn_pat": {
+        "bal_mean": 0.386,
+        "bal_std": 0.043,
+        "macro_f1_mean": 0.381,
+        "macro_f1_std": 0.04,
+        "bal_ci95": [
+          0.277,
+          0.499
+        ]
+      },
+      "frozen_reservoir": {
+        "bal_mean": 0.378,
+        "bal_std": 0.05,
+        "macro_f1_mean": 0.37,
+        "macro_f1_std": 0.049,
+        "bal_ci95": [
+          0.27,
+          0.488
+        ]
+      },
+      "insilico": {
+        "bal_mean": 0.374,
+        "bal_std": 0.041,
+        "macro_f1_mean": 0.357,
+        "macro_f1_std": 0.041,
+        "bal_ci95": [
+          0.271,
+          0.482
+        ]
+      }
+    }
+  },
+  "confusion_5class": {
+    "digital_psd_mlp": [
+      [
+        119,
+        31,
+        14,
+        19,
+        27
+      ],
+      [
+        18,
+        66,
+        69,
+        31,
+        26
+      ],
+      [
+        15,
+        50,
+        69,
+        43,
+        33
+      ],
+      [
+        9,
+        33,
+        46,
+        80,
+        42
+      ],
+      [
+        24,
+        20,
+        25,
+        55,
+        86
+      ]
+    ],
+    "pnn_pat": [
+      [
+        120,
+        37,
+        15,
+        21,
+        17
+      ],
+      [
+        28,
+        61,
+        69,
+        22,
+        30
+      ],
+      [
+        27,
+        72,
+        58,
+        30,
+        23
+      ],
+      [
+        34,
+        23,
+        41,
+        70,
+        42
+      ],
+      [
+        19,
+        20,
+        27,
+        48,
+        96
+      ]
+    ],
+    "frozen_reservoir": [
+      [
+        127,
+        40,
+        11,
+        14,
+        18
+      ],
+      [
+        33,
+        62,
+        74,
+        16,
+        25
+      ],
+      [
+        25,
+        75,
+        51,
+        34,
+        25
+      ],
+      [
+        41,
+        36,
+        37,
+        61,
+        35
+      ],
+      [
+        24,
+        23,
+        21,
+        46,
+        96
+      ]
+    ],
+    "insilico": [
+      [
+        132,
+        33,
+        15,
+        22,
+        8
+      ],
+      [
+        38,
+        69,
+        53,
+        26,
+        24
+      ],
+      [
+        35,
+        80,
+        46,
+        32,
+        17
+      ],
+      [
+        47,
+        32,
+        32,
+        67,
+        32
+      ],
+      [
+        31,
+        31,
+        23,
+        46,
+        79
+      ]
+    ]
+  },
+  "per_class_recall_5class": {
+    "digital_psd_mlp": [
+      0.567,
+      0.314,
+      0.329,
+      0.381,
+      0.41
+    ],
+    "pnn_pat": [
+      0.571,
+      0.29,
+      0.276,
+      0.333,
+      0.457
+    ],
+    "frozen_reservoir": [
+      0.605,
+      0.295,
+      0.243,
+      0.29,
+      0.457
+    ],
+    "insilico": [
+      0.629,
+      0.329,
+      0.219,
+      0.319,
+      0.376
+    ]
+  },
+  "logmel_resnet_5class": {
+    "bal_mean": 0.46,
+    "bal_std": 0.028,
+    "macro_f1_mean": 0.443,
+    "macro_f1_std": 0.041,
+    "bal_ci95": [
+      0.352,
+      0.565
+    ],
+    "confusion": [
+      [
+        54,
+        6,
+        4,
+        2,
+        4
+      ],
+      [
+        3,
+        36,
+        12,
+        8,
+        11
+      ],
+      [
+        4,
+        29,
+        15,
+        6,
+        16
+      ],
+      [
+        5,
+        9,
+        9,
+        25,
+        22
+      ],
+      [
+        4,
+        13,
+        10,
+        12,
+        31
+      ]
+    ],
+    "per_class_recall": [
+      0.771,
+      0.514,
+      0.214,
+      0.357,
+      0.443
+    ],
+    "n_seeds": 5
+  },
+  "pat_vs_frozen_paired_5class": {
+    "n_seeds": 15,
+    "pat_bal_per_seed": [
+      0.457,
+      0.371,
+      0.4,
+      0.386,
+      0.4,
+      0.371,
+      0.429,
+      0.4,
+      0.414,
+      0.429,
+      0.371,
+      0.271,
+      0.329,
+      0.371,
+      0.386
+    ],
+    "frozen_bal_per_seed": [
+      0.471,
+      0.371,
+      0.357,
+      0.414,
+      0.371,
+      0.371,
+      0.443,
+      0.371,
+      0.343,
+      0.357,
+      0.443,
+      0.314,
+      0.3,
+      0.314,
+      0.429
+    ],
+    "mean_diff": 0.008,
+    "ci95_diff": [
+      -0.017,
+      0.032
+    ],
+    "cohens_dz": 0.174,
+    "wilcoxon_p": 0.451,
+    "min_detectable_diff": 0.024,
+    "verdict": "At n=15 the design can detect a mean difference of 0.024; the observed +0.008 (95% CI [-0.017,0.032], p=0.45) is well below it, so training the physics FAILS TO DEMONSTRATE a gain over a frozen reservoir + trained readout -- consistent with reservoir-dominant learning, though a small effect below 0.024 cannot be excluded."
+  },
+  "wall_clock_s": 677.8
+}

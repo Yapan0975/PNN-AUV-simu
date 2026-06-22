@@ -1,0 +1,16 @@
+{
+  "device": {
+    "n_freq": 256,
+    "n_modes": 32,
+    "f_lo_hz": 10.0,
+    "f_hi_hz": 1000.0,
+    "Q_nominal": 40.0
+  },
+  "n_inputs": 600,
+  "kernel_rank_participation": 11.43,
+  "kernel_rank_count_1pct": 30,
+  "noise_rank_participation": 28.15,
+  "noise_rank_count_1pct": 31,
+  "input_rank_participation": 30.16,
+  "interpretation": "The 32-mode resonator bank keeps 30 of 32 modes active over real IARA spectra (effective rank by 1%-of-top-singular-value = 30; participation-ratio rank approximately 11.43, comparable to the 256-d input's approximately 30.16) -- a band-limited multi-mode nonlinear projection rather than a rank-EXPANDING kernel. The decisive structural fact is analytic: the readout is the time-averaged modal ENERGY of a power spectrum, so within-window phase and timing are discarded and the linear/fading MEMORY CAPACITY is ~0 by construction. This zero-memory, fixed-projection character is the mechanistic root of two reported facts -- training the physics adds nothing over a frozen reservoir (no recurrent state to tune; p=0.45), and the device is modulation-blind (it cannot recover the envelope/DEMON shaft-rate lines that discriminate vessel type). The noise-rank field is reported for completeness only; with the deterministic surrogate map it reflects the projection-matrix rank, not a generalisation property, so we do not interpret it."
+}

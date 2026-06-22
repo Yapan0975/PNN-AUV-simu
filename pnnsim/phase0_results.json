@@ -1,0 +1,44 @@
+{
+  "config": {
+    "seed": 0,
+    "f_lo": 10.0,
+    "f_hi": 1000.0,
+    "n_freq": 256,
+    "n_modes": 32,
+    "Q_nominal": 40.0,
+    "sigma_fab_omega": 0.03,
+    "sigma_fab_Q": 0.08,
+    "thermal_floor": 0.02,
+    "adc_bits": 8,
+    "drift_omega": 0.0,
+    "drift_Q": 0.0,
+    "n_classes": 4,
+    "n_train": 2000,
+    "n_test": 600,
+    "epochs": 60,
+    "batch": 128,
+    "lr": 0.003,
+    "device": "cpu"
+  },
+  "acc_digital_baseline": 0.9950000047683716,
+  "acc_pnn_pat": 0.9900000095367432,
+  "acc_frozen_random_physics_ablation": 0.9866666793823242,
+  "acc_insilico_clean": 0.9883333444595337,
+  "acc_insilico_deploy_on_noisy": 0.7250000238418579,
+  "pat_minus_insilico_deploy": 0.26499998569488525,
+  "pnn_over_baseline_ratio": 0.9949748791882747,
+  "physics_training_contribution_acc": 0.0033333301544189453,
+  "pat_gradient_cosine": 0.3601909279823303,
+  "energy": {
+    "pnn_power_mw": 15.9600832,
+    "digital_power_mw": 1502.2971519999999,
+    "power_ratio_digital_over_pnn": 94.12840354115447,
+    "sensitivity_vs_soc_overhead": {
+      "soc_0.5W": 84.27686915511515,
+      "soc_1.5W": 94.12840354115447,
+      "soc_3.0W": 96.97316162251141
+    },
+    "note": "device-anchored bottom-up model; dominant term is SoC platform overhead the architecture avoids; NOT measured from GPU"
+  },
+  "wall_clock_s": 5.357860565185547
+}

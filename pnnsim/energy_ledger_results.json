@@ -1,0 +1,238 @@
+{
+  "what": "Unified itemised power ledger with Monte-Carlo uncertainty (device model, not bench)",
+  "n_monte_carlo": 40000,
+  "line_items_mW_nominal_lo_hi": {
+    "adc_wideband": [
+      120.0,
+      60.0,
+      220.0
+    ],
+    "front_end_dsp": [
+      180.0,
+      70.0,
+      400.0
+    ],
+    "classifier_soc": [
+      900.0,
+      500.0,
+      1300.0
+    ],
+    "classifier_edge_npu": [
+      60.0,
+      15.0,
+      150.0
+    ],
+    "soc_overhead": [
+      150.0,
+      80.0,
+      300.0
+    ],
+    "npu_overhead": [
+      15.0,
+      6.0,
+      40.0
+    ],
+    "control_interface": [
+      20.0,
+      10.0,
+      40.0
+    ],
+    "mcu_supervision": [
+      8.0,
+      4.0,
+      16.0
+    ],
+    "wakeup_detector": [
+      1.0,
+      0.3,
+      3.0
+    ],
+    "soc_burst_log": [
+      15.0,
+      8.0,
+      30.0
+    ],
+    "afe_analog": [
+      6.0,
+      3.0,
+      12.0
+    ],
+    "pnn_bias": [
+      4.0,
+      2.0,
+      9.0
+    ],
+    "readout_adc_lowrate": [
+      3.0,
+      1.5,
+      7.0
+    ],
+    "pnn_misc": [
+      3.0,
+      1.0,
+      6.0
+    ],
+    "recal_amortised": [
+      0.5,
+      0.1,
+      2.0
+    ],
+    "fallback_amortised": [
+      1.0,
+      0.2,
+      4.0
+    ]
+  },
+  "tier1_device_upper_bound": {
+    "continuous_digital_SoC_mW": [
+      1458.5,
+      1102.9662,
+      1818.6332
+    ],
+    "continuous_digital_edgeNPU_mW": [
+      477.8,
+      330.1251,
+      643.3053
+    ],
+    "continuous_pnn_mW": [
+      54.3,
+      41.1638,
+      69.147
+    ],
+    "shared_frontend_ADC_DSP_mW": [
+      349.8,
+      216.2351,
+      505.8296
+    ],
+    "ratio_vs_SoC_mean": 27.3,
+    "ratio_vs_SoC_ci95": [
+      18.6559,
+      38.2498
+    ],
+    "ratio_vs_edgeNPU_mean": 8.9,
+    "ratio_vs_edgeNPU_ci95": [
+      5.7338,
+      13.1303
+    ],
+    "note": "PNN advantage is robust to the classifier choice because it removes the shared continuous front end (ADC + DSP); even a lean edge-NPU digital path still pays it."
+  },
+  "crossover_duty": {
+    "d_star_mean_pct": 1.47,
+    "d_star_ci95_pct": [
+      0.97,
+      2.13
+    ]
+  },
+  "tier2_subsystem_fair_dutycycled": {
+    "d=0.01": {
+      "dutycycled_digital_mW": [
+        48.3,
+        35.7888,
+        62.47
+      ],
+      "analog_pnn_mW": [
+        54.5,
+        41.3424,
+        69.328
+      ],
+      "ratio_digital_over_pnn_mean": 0.89,
+      "ratio_ci95": [
+        0.7634,
+        1.0103
+      ],
+      "pnn_saves_energy": false
+    },
+    "d=0.05": {
+      "dutycycled_digital_mW": [
+        105.4,
+        83.4249,
+        127.944
+      ],
+      "analog_pnn_mW": [
+        55.2,
+        42.0456,
+        70.0582
+      ],
+      "ratio_digital_over_pnn_mean": 1.93,
+      "ratio_ci95": [
+        1.5261,
+        2.4291
+      ],
+      "pnn_saves_energy": true
+    },
+    "d=0.10": {
+      "dutycycled_digital_mW": [
+        176.7,
+        139.1697,
+        215.0911
+      ],
+      "analog_pnn_mW": [
+        56.1,
+        42.9147,
+        70.9752
+      ],
+      "ratio_digital_over_pnn_mean": 3.19,
+      "ratio_ci95": [
+        2.3932,
+        4.1931
+      ],
+      "pnn_saves_energy": true
+    },
+    "d=0.30": {
+      "dutycycled_digital_mW": [
+        462.1,
+        355.3384,
+        570.8026
+      ],
+      "analog_pnn_mW": [
+        59.6,
+        46.164,
+        74.7142
+      ],
+      "ratio_digital_over_pnn_mean": 7.86,
+      "ratio_ci95": [
+        5.597,
+        10.6795
+      ],
+      "pnn_saves_energy": true
+    }
+  },
+  "tier3_mission_endurance_by_platform": {
+    "propulsion AUV (REMUS-100-class)": {
+      "native_endurance": "~22 h @ 3 kn",
+      "vessel_duty_d_op": 0.1,
+      "platform_total_W": 126.6,
+      "digital_path_feasible_frac": 1.0,
+      "pnn_path_mW": 56.1,
+      "endurance_gain_pct_mean": 1.15,
+      "endurance_gain_pct_ci95": [
+        0.742,
+        1.7077
+      ],
+      "note": "gain EXTENDS the platform's native endurance by this fraction; NOT a claim of a 30-day mission on a 1-day platform"
+    },
+    "hybrid low-power AUV": {
+      "native_endurance": "days",
+      "vessel_duty_d_op": 0.1,
+      "platform_total_W": 28.4,
+      "digital_path_feasible_frac": 1.0,
+      "pnn_path_mW": 56.1,
+      "endurance_gain_pct_mean": 5.5,
+      "endurance_gain_pct_ci95": [
+        3.1625,
+        9.1154
+      ],
+      "note": "gain EXTENDS the platform's native endurance by this fraction; NOT a claim of a 30-day mission on a 1-day platform"
+    },
+    "buoyancy glider (Slocum-class)": {
+      "native_endurance": "weeks-months",
+      "vessel_duty_d_op": 0.05,
+      "platform_total_W": 1.5,
+      "digital_path_feasible_frac": 0.487,
+      "pnn_path_mW": 55.2,
+      "endurance_gain_pct_mean": null,
+      "note": "continuous-digital sensing EXCEEDS this platform's power budget (~1.5 W) -> infeasible; the sub-100 mW analog PNN is what makes always-on classification possible at all (a CAPABILITY argument, not a % extension)"
+    }
+  },
+  "honest_summary": "Tier 1: the analog PNN draws ~54.3 mW vs ~1458.5 mW for a continuous watt-class SoC pipeline (ratio 27.3x) and ~477.8 mW for a lean edge-NPU pipeline (ratio 8.9x). The advantage survives the edge-NPU comparison because the PNN removes the shared continuous front end (ADC + DSP, ~349.8 mW) that no digital classifier choice avoids. Under a fair duty-cycled digital baseline the PNN saves energy only above a crossover duty d* = 1.47% (CI [0.97, 2.13]). Endurance gains are class-dependent and EXTEND native endurance; no 30-day continuous mission is claimed for a ~1-day AUV."
+}

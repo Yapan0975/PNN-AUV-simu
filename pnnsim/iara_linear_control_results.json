@@ -1,0 +1,19 @@
+{
+  "control": "trained LINEAR readout (multinomial logistic regression) on 256-dim resonator-band power spectrum, no resonator nonlinearity; leakage-free by-recording split, 5 seeds",
+  "linear_five_class_mean": 0.34,
+  "linear_five_class_std": 0.035,
+  "linear_detection_roc_auc": 0.715,
+  "linear_detection_pd_at_pfa_0.1": 0.171,
+  "digital_mlp_five_class_mean": 0.429,
+  "digital_mlp_five_class_std": 0.086,
+  "digital_mlp_detection_roc_auc": 0.762,
+  "digital_mlp_detection_pd_at_pfa_0.1": 0.204,
+  "prevalence_ship": 0.8,
+  "reference": {
+    "psd_mlp_5cls": 0.414,
+    "pnn_pat_5cls": 0.403,
+    "fixed_reservoir_5cls": 0.378,
+    "pnn_pat_det_auc": 0.793,
+    "energy_det_auc": 0.689
+  }
+}

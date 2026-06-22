@@ -1,0 +1,91 @@
+{
+  "dataset": "IARA (Zenodo 10.5281/zenodo.15758636), same 225 recordings, leakage-free recording-level split",
+  "stratifier": "sea state (Douglas 1-7) as wind-noise/SNR proxy; calm=1-2 (higher SNR), rough>=3 (lower SNR)",
+  "why_not_cpa": "IARA per-recording CPA distance sparsely populated in this subset (94/225 numeric, 68 at the 150 s sentinel, 0 of 45 Background) -> not estimable.",
+  "n_seeds": 5,
+  "metric": "recording-level balanced accuracy, per-recording majority vote over seeds, recording bootstrap 95% CI",
+  "resnet": {
+    "overall": {
+      "n_rec": 189,
+      "bal_acc": 0.438,
+      "bal_ci95": [
+        0.372,
+        0.505
+      ]
+    },
+    "calm (sea state 1-2)": {
+      "n_rec": 84,
+      "bal_acc": 0.389,
+      "bal_ci95": [
+        0.29,
+        0.488
+      ],
+      "per_class_n": {
+        "Background": 11,
+        "Cargo": 21,
+        "Tanker": 20,
+        "Tug": 18,
+        "Special Craft": 14
+      }
+    },
+    "rough (sea state >=3)": {
+      "n_rec": 86,
+      "bal_acc": 0.426,
+      "bal_ci95": [
+        0.322,
+        0.534
+      ],
+      "per_class_n": {
+        "Background": 24,
+        "Cargo": 12,
+        "Tanker": 9,
+        "Tug": 18,
+        "Special Craft": 23
+      }
+    }
+  },
+  "pnn_pat": {
+    "overall": {
+      "n_rec": 189,
+      "bal_acc": 0.387,
+      "bal_ci95": [
+        0.316,
+        0.456
+      ]
+    },
+    "calm (sea state 1-2)": {
+      "n_rec": 84,
+      "bal_acc": 0.468,
+      "bal_ci95": [
+        0.363,
+        0.575
+      ],
+      "per_class_n": {
+        "Background": 11,
+        "Cargo": 21,
+        "Tanker": 20,
+        "Tug": 18,
+        "Special Craft": 14
+      }
+    },
+    "rough (sea state >=3)": {
+      "n_rec": 86,
+      "bal_acc": 0.331,
+      "bal_ci95": [
+        0.23,
+        0.434
+      ],
+      "per_class_n": {
+        "Background": 24,
+        "Cargo": 12,
+        "Tanker": 9,
+        "Tug": 18,
+        "Special Craft": 23
+      }
+    }
+  },
+  "gap_resnet_minus_pnn": {
+    "calm (sea state 1-2)": -0.079,
+    "rough (sea state >=3)": 0.095
+  }
+}

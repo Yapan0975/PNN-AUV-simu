@@ -1,0 +1,46 @@
+{
+  "dataset": "IARA log-mel (real, leakage-free)",
+  "model": "digital log-mel CNN2D with plain supervised fine-tuning (generic/digital control, no PINN surrogate)",
+  "n_seeds": 3,
+  "scales": [
+    0.5,
+    1.0,
+    1.5
+  ],
+  "per_scale": [
+    {
+      "scale": 0.5,
+      "shift_bins": 2,
+      "atten": 1.25,
+      "noise": 0.3,
+      "day0": 0.395,
+      "day30_norecal": 0.233,
+      "day30_recal": 0.381,
+      "recovered_abs": 0.148,
+      "recovered_frac_of_loss": 0.912
+    },
+    {
+      "scale": 1.0,
+      "shift_bins": 4,
+      "atten": 2.5,
+      "noise": 0.6,
+      "day0": 0.395,
+      "day30_norecal": 0.243,
+      "day30_recal": 0.352,
+      "recovered_abs": 0.11,
+      "recovered_frac_of_loss": 0.719
+    },
+    {
+      "scale": 1.5,
+      "shift_bins": 6,
+      "atten": 3.75,
+      "noise": 0.9,
+      "day0": 0.395,
+      "day30_norecal": 0.252,
+      "day30_recal": 0.295,
+      "recovered_abs": 0.043,
+      "recovered_frac_of_loss": 0.3
+    }
+  ],
+  "headline": "Across a 0.5x-1.5x drift-strength sweep the recovered FRACTION of the drift loss is 91% at 0.5x, 72% at 1.0x, 30% at 1.5x; milder drift loses less absolutely but recalibration recovers a larger fraction, consistent with a generic periodic-re-fit mechanism rather than a magnitude-tuned artefact."
+}

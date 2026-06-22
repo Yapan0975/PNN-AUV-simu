@@ -1,0 +1,112 @@
+{
+  "question": "Is the gap between IARA-paper MLP (0.675, 5x2 CV) and our recording-level 0.41-0.45 explained by segment-level leakage in naive CV?",
+  "iara_paper_baseline": {
+    "models": [
+      "RandomForest",
+      "MLP",
+      "CNN"
+    ],
+    "best_MLP_balanced_acc": "0.6748 +/- 0.0124",
+    "cv": "5x2",
+    "doi": "10.1109/ACCESS.2025.3585467"
+  },
+  "our_protocol": "225 recordings (45/class) of 1825; 4 s windows; 5 classes",
+  "note_segacc": "segacc = SEGMENT-level balanced accuracy (not aggregated per recording), so it is directly comparable to a 5x2-CV segment-level number.",
+  "psd_mlp_5class": {
+    "recording_level_segacc": {
+      "mean": 0.378,
+      "std": 0.01,
+      "vals": [
+        0.386,
+        0.374,
+        0.367,
+        0.393,
+        0.373
+      ]
+    },
+    "segment_level_segacc": {
+      "mean": 0.87,
+      "std": 0.005,
+      "vals": [
+        0.875,
+        0.861,
+        0.875,
+        0.871,
+        0.869
+      ]
+    },
+    "recording_level_recacc": {
+      "mean": 0.414,
+      "std": 0.035,
+      "vals": [
+        0.414,
+        0.443,
+        0.357,
+        0.457,
+        0.4
+      ]
+    }
+  },
+  "logmel_logmel_mlp_5class": {
+    "recording_level_segacc": {
+      "mean": 0.376,
+      "std": 0.034,
+      "vals": [
+        0.399,
+        0.401,
+        0.327
+      ]
+    },
+    "segment_level_segacc": {
+      "mean": 0.765,
+      "std": 0.009,
+      "vals": [
+        0.776,
+        0.754,
+        0.765
+      ]
+    }
+  },
+  "logmel_cnn2d_5class": {
+    "recording_level_segacc": {
+      "mean": 0.38,
+      "std": 0.019,
+      "vals": [
+        0.367,
+        0.365,
+        0.407
+      ]
+    },
+    "segment_level_segacc": {
+      "mean": 0.652,
+      "std": 0.044,
+      "vals": [
+        0.694,
+        0.672,
+        0.591
+      ]
+    }
+  },
+  "logmel_resnet_5class": {
+    "recording_level_segacc": {
+      "mean": 0.415,
+      "std": 0.017,
+      "vals": [
+        0.439,
+        0.404,
+        0.402
+      ]
+    },
+    "segment_level_segacc": {
+      "mean": 0.891,
+      "std": 0.023,
+      "vals": [
+        0.905,
+        0.909,
+        0.858
+      ]
+    }
+  },
+  "leakage_inflation_psd_mlp": 0.492,
+  "verdict": "Segment-level (leaky) split inflates PSD-MLP balanced accuracy by +0.492 over the recording-level (honest) split. If large and positive, the IARA-paper 0.675 is consistent with segment-level leakage, and our recording-level ~0.41-0.45 is the honest leakage-free correction."
+}

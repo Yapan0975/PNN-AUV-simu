@@ -1,0 +1,118 @@
+{
+  "question": "Does the PNN energy advantage survive a FAIR duty-cycled digital baseline?",
+  "power_terms_mw": {
+    "P_SOC_FULL": 1502.0,
+    "P_SOC_LOG": 15.0,
+    "P_ANALOG_PNN": 16.0,
+    "P_DETECT": 1.0
+  },
+  "crossover_duty_nominal": 0.010087424344317418,
+  "crossover_duty_range": [
+    0.0,
+    0.06711499663752522
+  ],
+  "crossover_sweep": [
+    {
+      "p_analog_mw": 8.0,
+      "p_detect_mw": 0.2,
+      "crossover_duty": 0.005245460659045057
+    },
+    {
+      "p_analog_mw": 8.0,
+      "p_detect_mw": 1.0,
+      "crossover_duty": 0.004707464694014795
+    },
+    {
+      "p_analog_mw": 8.0,
+      "p_detect_mw": 3.0,
+      "crossover_duty": 0.0033624747814391394
+    },
+    {
+      "p_analog_mw": 8.0,
+      "p_detect_mw": 10.0,
+      "crossover_duty": 0.0
+    },
+    {
+      "p_analog_mw": 16.0,
+      "p_detect_mw": 0.2,
+      "crossover_duty": 0.010625420309347681
+    },
+    {
+      "p_analog_mw": 16.0,
+      "p_detect_mw": 1.0,
+      "crossover_duty": 0.010087424344317418
+    },
+    {
+      "p_analog_mw": 16.0,
+      "p_detect_mw": 3.0,
+      "crossover_duty": 0.008742434431741762
+    },
+    {
+      "p_analog_mw": 16.0,
+      "p_detect_mw": 10.0,
+      "crossover_duty": 0.004034969737726967
+    },
+    {
+      "p_analog_mw": 32.0,
+      "p_detect_mw": 0.2,
+      "crossover_duty": 0.021385339609952925
+    },
+    {
+      "p_analog_mw": 32.0,
+      "p_detect_mw": 1.0,
+      "crossover_duty": 0.020847343644922665
+    },
+    {
+      "p_analog_mw": 32.0,
+      "p_detect_mw": 3.0,
+      "crossover_duty": 0.019502353732347006
+    },
+    {
+      "p_analog_mw": 32.0,
+      "p_detect_mw": 10.0,
+      "crossover_duty": 0.014794889038332213
+    },
+    {
+      "p_analog_mw": 64.0,
+      "p_detect_mw": 0.2,
+      "crossover_duty": 0.042905178211163415
+    },
+    {
+      "p_analog_mw": 64.0,
+      "p_detect_mw": 1.0,
+      "crossover_duty": 0.04236718224613315
+    },
+    {
+      "p_analog_mw": 64.0,
+      "p_detect_mw": 3.0,
+      "crossover_duty": 0.0410221923335575
+    },
+    {
+      "p_analog_mw": 64.0,
+      "p_detect_mw": 10.0,
+      "crossover_duty": 0.0363147276395427
+    },
+    {
+      "p_analog_mw": 100.0,
+      "p_detect_mw": 0.2,
+      "crossover_duty": 0.06711499663752522
+    },
+    {
+      "p_analog_mw": 100.0,
+      "p_detect_mw": 1.0,
+      "crossover_duty": 0.06657700067249496
+    },
+    {
+      "p_analog_mw": 100.0,
+      "p_detect_mw": 3.0,
+      "crossover_duty": 0.0652320107599193
+    },
+    {
+      "p_analog_mw": 100.0,
+      "p_detect_mw": 10.0,
+      "crossover_duty": 0.0605245460659045
+    }
+  ],
+  "pnn_accuracy_cost_real_data": 0.1,
+  "interpretation": "Under a FAIR duty-cycled digital baseline the analog PNN retains an energy advantage only when vessel-presence duty exceeds ~0.0-6.7% (device-model dependent). Below that, duty-cycled digital wins on BOTH energy and accuracy. Above it, the PNN wins energy but still costs ~0.10 balanced accuracy. The 94x continuous-vs-continuous figure is NOT a fair system claim; the honest claim is a regime-bounded energy-accuracy tradeoff."
+}

@@ -1,0 +1,149 @@
+{
+  "dataset": "IARA (Zenodo 10.5281/zenodo.15758636), full archive A-H, real 128 kHz hydrophone audio",
+  "classes_5": [
+    "Background",
+    "Cargo",
+    "Tanker",
+    "Tug",
+    "Special Craft"
+  ],
+  "class_counts": {
+    "Background": 540,
+    "Cargo": 540,
+    "Tanker": 540,
+    "Tug": 540,
+    "Special Craft": 540
+  },
+  "n_segments": 2700,
+  "n_seeds": 5,
+  "split": "recording-level (no segment leakage), 30% test",
+  "metric": "recording-level balanced accuracy (segments aggregated per recording)",
+  "granularity_sweep": {
+    "2": {
+      "name": "ship vs background",
+      "digital": {
+        "mean": 0.7507936507936508,
+        "std": 0.06200078475072537,
+        "vals": [
+          0.6772,
+          0.7315,
+          0.7487,
+          0.8651,
+          0.7315
+        ]
+      },
+      "pnn_pat": {
+        "mean": 0.6489417989417989,
+        "std": 0.06271905984684402,
+        "vals": [
+          0.6772,
+          0.7315,
+          0.668,
+          0.6243,
+          0.5437
+        ]
+      }
+    },
+    "3": {
+      "name": "bg/cargo/tanker",
+      "digital": {
+        "mean": 0.5238095238095238,
+        "std": 0.04761904761904762,
+        "vals": [
+          0.4524,
+          0.5476,
+          0.5238,
+          0.5952,
+          0.5
+        ]
+      },
+      "pnn_pat": {
+        "mean": 0.47619047619047616,
+        "std": 0.04761904761904758,
+        "vals": [
+          0.4524,
+          0.5,
+          0.5476,
+          0.4762,
+          0.4048
+        ]
+      }
+    },
+    "4": {
+      "name": "bg/cargo/tanker/tug",
+      "digital": {
+        "mean": 0.45714285714285713,
+        "std": 0.04601463830973259,
+        "vals": [
+          0.4643,
+          0.4643,
+          0.4107,
+          0.5357,
+          0.4107
+        ]
+      },
+      "pnn_pat": {
+        "mean": 0.4392857142857142,
+        "std": 0.07709654694615323,
+        "vals": [
+          0.5,
+          0.4107,
+          0.4643,
+          0.5179,
+          0.3036
+        ]
+      }
+    },
+    "5": {
+      "name": "5-class (all)",
+      "digital": {
+        "mean": 0.4142857142857143,
+        "std": 0.034992710611188256,
+        "vals": [
+          0.4143,
+          0.4429,
+          0.3571,
+          0.4571,
+          0.4
+        ]
+      },
+      "pnn_pat": {
+        "mean": 0.40285714285714286,
+        "std": 0.029137254363387332,
+        "vals": [
+          0.4571,
+          0.3714,
+          0.4,
+          0.3857,
+          0.4
+        ]
+      },
+      "frozen": {
+        "mean": 0.4,
+        "std": 0.03938299643454349,
+        "vals": [
+          0.4714,
+          0.3714,
+          0.3714,
+          0.4143,
+          0.3714
+        ]
+      },
+      "insilico": {
+        "mean": 0.3942857142857143,
+        "std": 0.037904283318347436,
+        "vals": [
+          0.4143,
+          0.4429,
+          0.3286,
+          0.3857,
+          0.4
+        ]
+      }
+    }
+  },
+  "pnn_minus_digital_binary": -0.10185185185185186,
+  "pat_minus_insilico_5class": 0.008571428571428563,
+  "note": "HONEST: analog PNN tracks the digital baseline but with a ~0.05-0.10 cost on real spectra (absent synthetically); not closed by more resonators (device-noise penalty). Fine-grained classification hard for ALL methods with this minimal 10-1000 Hz front end. Power advantage = same device-model ~94x (data-independent). in-silico>PAT on F+G+H subset did NOT survive 5 seeds (artifact).",
+  "wall_clock_s": 56.92044949531555
+}

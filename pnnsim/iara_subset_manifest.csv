@@ -1,0 +1,226 @@
+IARA_ID,class,volume,sea_state,n_segments
+10,Cargo,A,3,12
+11,Tanker,A,3,12
+13,Cargo,A,4,12
+28,Tanker,A,2,12
+38,Tug,A,3,12
+67,Cargo,A,3,12
+70,Cargo,A,3,12
+101,Cargo,A,1,12
+110,Tug,A,1,12
+128,Tug,A,2,12
+138,Cargo,A,4,12
+141,Cargo,A,2,12
+144,Cargo,A,3,12
+147,Tanker,A,3,12
+156,Tanker,A,2,12
+159,Tanker,A,2,12
+161,Tanker,A,1,12
+175,Cargo,A,2,12
+180,Cargo,A,1,12
+190,Special Craft,A,2,12
+193,Special Craft,A,2,12
+234,Tanker,A,2,12
+243,Special Craft,A,3,12
+250,Tug,A,3,12
+253,Cargo,A,2,12
+255,Tug,A,2,12
+260,Tanker,A,3,12
+263,Tanker,A,1,12
+272,Tanker,A,1,12
+282,Special Craft,A,1,12
+303,Special Craft,A,2,12
+323,Special Craft,A,3,12
+334,Cargo,A,2,12
+356,Tanker,A,3,12
+359,Tug,A,2,12
+360,Tanker,A,4,12
+364,Special Craft,A,2,12
+365,Special Craft,A,2,12
+368,Tanker,A,2,12
+370,Tanker,A,2,12
+409,Special Craft,A,3,12
+410,Special Craft,A,2,12
+415,Special Craft,A,2,12
+439,Special Craft,A,2,12
+445,Cargo,A,4,12
+447,Cargo,A,3,12
+459,Tanker,B,2,12
+469,Cargo,B,2,12
+470,Special Craft,B,3,12
+471,Tanker,B,3,12
+481,Cargo,B,1,12
+485,Tug,B,4,12
+518,Cargo,B,2,12
+521,Tanker,B,1,12
+541,Tug,B,5,12
+555,Tug,B,6,12
+557,Special Craft,B,3,12
+571,Special Craft,B,3,12
+576,Special Craft,B,4,12
+578,Tanker,B,3,12
+590,Special Craft,B,3,12
+611,Cargo,B,2,12
+615,Tug,B,1,12
+630,Special Craft,B,3,12
+636,Tanker,B,1,12
+639,Special Craft,B,4,12
+654,Special Craft,B,2,12
+658,Tanker,C,1,12
+669,Tanker,C,1,12
+673,Cargo,C,2,12
+674,Cargo,C,3,12
+683,Cargo,C,2,12
+702,Cargo,C,2,12
+706,Special Craft,C,5,12
+712,Tug,C,3,12
+737,Cargo,C,1,12
+744,Tug,C,1,12
+762,Cargo,C,1,12
+778,Cargo,C,1,12
+781,Tanker,C,3,12
+788,Special Craft,C,3,12
+794,Tug,C,3,12
+797,Special Craft,C,1,12
+798,Tug,C,4,12
+800,Tug,C,,12
+802,Special Craft,C,1,12
+807,Tanker,C,1,12
+809,Tug,C,4,12
+819,Tug,C,3,12
+831,Tug,C,4,12
+833,Cargo,C,5,12
+834,Tug,C,2,12
+837,Tug,C,6,12
+842,Tug,C,3,12
+843,Special Craft,C,4,12
+869,Special Craft,C,3,12
+879,Special Craft,C,2,12
+889,Tug,C,2,12
+890,Tanker,C,3,12
+897,Tug,C,3,12
+902,Tanker,C,,12
+922,Tanker,C,,12
+925,Special Craft,C,4,12
+930,Cargo,C,4,12
+934,Tanker,C,1,12
+940,Cargo,C,2,12
+941,Tanker,C,1,12
+965,Tanker,C,1,12
+988,Tanker,C,4,12
+1011,Special Craft,D,3,12
+1016,Special Craft,D,4,12
+1025,Tug,D,2,12
+1042,Tug,D,1,12
+1043,Tug,D,2,12
+1045,Tug,D,1,12
+1046,Tug,D,1,12
+1047,Tug,D,1,12
+1048,Tug,D,2,12
+1053,Special Craft,D,3,12
+1060,Tug,D,3,12
+1061,Tug,D,2,12
+1063,Special Craft,D,3,12
+1073,Special Craft,D,2,12
+1076,Cargo,D,4,12
+1082,Tug,D,4,12
+1088,Tug,D,2,12
+1097,Special Craft,D,3,12
+1111,Tug,D,2,12
+1116,Tanker,D,1,12
+1118,Cargo,D,2,12
+1120,Cargo,D,1,12
+1124,Tug,D,1,12
+1128,Tug,D,4,12
+1140,Tug,D,3,12
+1146,Tug,D,3,12
+1150,Tug,D,3,12
+1159,Tanker,D,1,12
+1193,Tanker,D,4,12
+1204,Special Craft,D,3,12
+1246,Cargo,D,3,12
+1258,Tanker,D,2,12
+1279,Tanker,D,2,12
+1280,Cargo,D,1,12
+1294,Cargo,D,3,12
+1296,Special Craft,D,2,12
+1303,Tanker,D,2,12
+1306,Special Craft,D,1,12
+1309,Tug,D,3,12
+1316,Tug,D,4,12
+1321,Special Craft,D,3,12
+1349,Cargo,D,2,12
+1355,Cargo,D,2,12
+1359,Special Craft,D,6,12
+1371,Special Craft,D,3,12
+1372,Special Craft,D,2,12
+1377,Special Craft,D,3,12
+1379,Special Craft,D,3,12
+1387,Tanker,D,,12
+1389,Tanker,D,1,12
+1391,Cargo,D,2,12
+1400,Cargo,D,2,12
+1404,Tanker,D,3,12
+1409,Tanker,D,4,12
+1417,Tanker,D,1,12
+1418,Cargo,D,2,12
+1433,Tanker,D,6,12
+1434,Tug,D,1,12
+1439,Special Craft,D,,12
+1444,Special Craft,D,4,12
+1446,Background,E,1,12
+1451,Background,E,2,12
+1456,Background,E,2,12
+1464,Background,E,2,12
+1477,Background,E,1,12
+1482,Background,E,6,12
+1487,Background,E,5,12
+1490,Background,E,4,12
+1493,Background,E,3,12
+1509,Background,E,5,12
+1517,Background,E,6,12
+1529,Background,E,6,12
+1553,Background,E,1,12
+1563,Background,E,1,12
+1587,Background,E,3,12
+1593,Background,E,5,12
+1601,Background,E,6,12
+1604,Background,E,3,12
+1605,Background,E,2,12
+1606,Background,E,2,12
+1607,Background,E,3,12
+1610,Background,E,3,12
+1612,Background,E,4,12
+1627,Background,E,6,12
+1628,Background,E,4,12
+1632,Background,E,4,12
+1638,Background,E,4,12
+1641,Background,E,3,12
+1656,Background,E,3,12
+1659,Background,E,2,12
+1661,Background,E,4,12
+1666,Background,E,5,12
+1667,Background,E,2,12
+1672,Background,E,5,12
+1678,Background,E,6,12
+1679,Background,E,3,12
+1681,Background,E,3,12
+1684,Background,E,5,12
+1707,Tanker,F,,12
+1710,Cargo,F,,12
+1711,Cargo,F,,12
+1720,Tanker,F,,12
+1725,Cargo,F,,12
+1736,Cargo,F,,12
+1744,Tug,G,,12
+1754,Tug,G,,12
+1756,Cargo,G,,12
+1758,Cargo,G,,12
+1759,Tanker,G,,12
+1791,Background,H,,12
+1801,Background,H,,12
+1808,Background,H,,12
+1812,Background,H,,12
+1813,Background,H,,12
+1817,Background,H,,12
+1820,Background,H,,12

@@ -1,0 +1,153 @@
+{
+  "task": "subset robustness of the leakage-free 5-class ceiling (external review r3 #4)",
+  "metric": "recording-level balanced accuracy, mean+/-std over 3 train/split seeds",
+  "paper_subset_reference": {
+    "resnet_5cls": 0.46,
+    "band_mlp_5cls": 0.429,
+    "analog_pnn_pat_5cls": 0.403
+  },
+  "draws": {
+    "bal_seed0": {
+      "recs_per_class_cap": 45,
+      "draw_seed": 0,
+      "n_recordings": 225,
+      "class_counts": {
+        "Cargo": 45,
+        "Tanker": 45,
+        "Tug": 45,
+        "Special Craft": 45,
+        "Background": 45
+      },
+      "resnet_5cls_mean": 0.452,
+      "resnet_5cls_std": 0.041,
+      "band_mlp_5cls_mean": 0.376,
+      "band_mlp_5cls_std": 0.074,
+      "gap_resnet_minus_band": 0.076,
+      "resnet_vals": [
+        0.457,
+        0.5,
+        0.4
+      ],
+      "band_vals": [
+        0.429,
+        0.429,
+        0.271
+      ]
+    },
+    "bal_seed1": {
+      "recs_per_class_cap": 45,
+      "draw_seed": 1,
+      "n_recordings": 225,
+      "class_counts": {
+        "Cargo": 45,
+        "Tanker": 45,
+        "Tug": 45,
+        "Special Craft": 45,
+        "Background": 45
+      },
+      "resnet_5cls_mean": 0.457,
+      "resnet_5cls_std": 0.02,
+      "band_mlp_5cls_mean": 0.457,
+      "band_mlp_5cls_std": 0.065,
+      "gap_resnet_minus_band": -0.0,
+      "resnet_vals": [
+        0.429,
+        0.471,
+        0.471
+      ],
+      "band_vals": [
+        0.471,
+        0.371,
+        0.529
+      ]
+    },
+    "bal_seed2": {
+      "recs_per_class_cap": 45,
+      "draw_seed": 2,
+      "n_recordings": 225,
+      "class_counts": {
+        "Cargo": 45,
+        "Tanker": 45,
+        "Tug": 45,
+        "Special Craft": 45,
+        "Background": 45
+      },
+      "resnet_5cls_mean": 0.39,
+      "resnet_5cls_std": 0.047,
+      "band_mlp_5cls_mean": 0.386,
+      "band_mlp_5cls_std": 0.02,
+      "gap_resnet_minus_band": 0.005,
+      "resnet_vals": [
+        0.4,
+        0.443,
+        0.329
+      ],
+      "band_vals": [
+        0.4,
+        0.357,
+        0.4
+      ]
+    },
+    "bal_seed3": {
+      "recs_per_class_cap": 45,
+      "draw_seed": 3,
+      "n_recordings": 225,
+      "class_counts": {
+        "Cargo": 45,
+        "Tanker": 45,
+        "Tug": 45,
+        "Special Craft": 45,
+        "Background": 45
+      },
+      "resnet_5cls_mean": 0.448,
+      "resnet_5cls_std": 0.027,
+      "band_mlp_5cls_mean": 0.395,
+      "band_mlp_5cls_std": 0.018,
+      "gap_resnet_minus_band": 0.052,
+      "resnet_vals": [
+        0.429,
+        0.486,
+        0.429
+      ],
+      "band_vals": [
+        0.4,
+        0.414,
+        0.371
+      ]
+    },
+    "imbalanced_150": {
+      "recs_per_class_cap": 150,
+      "draw_seed": 0,
+      "n_recordings": 716,
+      "class_counts": {
+        "Cargo": 150,
+        "Tanker": 150,
+        "Tug": 116,
+        "Special Craft": 150,
+        "Background": 150
+      },
+      "resnet_5cls_mean": 0.534,
+      "resnet_5cls_std": 0.031,
+      "band_mlp_5cls_mean": 0.495,
+      "band_mlp_5cls_std": 0.006,
+      "gap_resnet_minus_band": 0.039,
+      "resnet_vals": [
+        0.53,
+        0.573,
+        0.498
+      ],
+      "band_vals": [
+        0.502,
+        0.486,
+        0.498
+      ]
+    }
+  },
+  "balanced_draw_summary": {
+    "resnet_5cls_across_draws_mean": 0.437,
+    "resnet_5cls_across_draws_std": 0.027,
+    "band_5cls_across_draws_mean": 0.403,
+    "band_5cls_across_draws_std": 0.032,
+    "n_balanced_draws": 4
+  }
+}

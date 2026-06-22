@@ -1,0 +1,187 @@
+{
+  "corpus": "ShipsEar (Santos-Dominguez 2016) via public HF redistribution peng7554/DS3500, pre-segmented 5 s / 16 kHz windows",
+  "honesty_note": "the redistribution groups the 90 original recordings into 12 coarser acoustic SESSIONS; the grouping unit here is a session (coarser than a recording), so a by-session split is a CONSERVATIVE leakage test.",
+  "feature": "log-mel 48x77, decimated to 4000 Hz, <= 80 windows/session",
+  "sessions_per_class": {
+    "0": 5,
+    "1": 3,
+    "2": 1,
+    "3": 2,
+    "4": 1
+  },
+  "metric": "SEGMENT-level balanced accuracy (mean+/-std over 5 seeds)",
+  "3class_ge2sessions": {
+    "classes_kept": [
+      0,
+      1,
+      3
+    ],
+    "n_segments": 629,
+    "n_sessions": 10,
+    "k": 3,
+    "results": {
+      "logmel_mlp": {
+        "by_session_segacc": {
+          "mean": 0.445,
+          "std": 0.061,
+          "vals": [
+            0.503,
+            0.404,
+            0.524,
+            0.361,
+            0.435
+          ]
+        },
+        "by_segment_segacc": {
+          "mean": 0.833,
+          "std": 0.02,
+          "vals": [
+            0.867,
+            0.807,
+            0.827,
+            0.832,
+            0.83
+          ]
+        },
+        "leakage_inflation": 0.388
+      },
+      "cnn2d": {
+        "by_session_segacc": {
+          "mean": 0.446,
+          "std": 0.053,
+          "vals": [
+            0.537,
+            0.468,
+            0.425,
+            0.418,
+            0.384
+          ]
+        },
+        "by_segment_segacc": {
+          "mean": 0.759,
+          "std": 0.089,
+          "vals": [
+            0.869,
+            0.596,
+            0.787,
+            0.784,
+            0.76
+          ]
+        },
+        "leakage_inflation": 0.313
+      },
+      "resnet": {
+        "by_session_segacc": {
+          "mean": 0.38,
+          "std": 0.08,
+          "vals": [
+            0.496,
+            0.352,
+            0.372,
+            0.422,
+            0.256
+          ]
+        },
+        "by_segment_segacc": {
+          "mean": 0.825,
+          "std": 0.037,
+          "vals": [
+            0.802,
+            0.764,
+            0.845,
+            0.844,
+            0.869
+          ]
+        },
+        "leakage_inflation": 0.445
+      }
+    }
+  },
+  "2class_0v1": {
+    "classes_kept": [
+      0,
+      1
+    ],
+    "n_segments": 469,
+    "n_sessions": 8,
+    "k": 2,
+    "results": {
+      "logmel_mlp": {
+        "by_session_segacc": {
+          "mean": 0.602,
+          "std": 0.071,
+          "vals": [
+            0.706,
+            0.649,
+            0.527,
+            0.523,
+            0.607
+          ]
+        },
+        "by_segment_segacc": {
+          "mean": 0.921,
+          "std": 0.02,
+          "vals": [
+            0.94,
+            0.906,
+            0.95,
+            0.902,
+            0.905
+          ]
+        },
+        "leakage_inflation": 0.319
+      },
+      "cnn2d": {
+        "by_session_segacc": {
+          "mean": 0.521,
+          "std": 0.027,
+          "vals": [
+            0.552,
+            0.551,
+            0.519,
+            0.485,
+            0.497
+          ]
+        },
+        "by_segment_segacc": {
+          "mean": 0.854,
+          "std": 0.048,
+          "vals": [
+            0.882,
+            0.833,
+            0.772,
+            0.869,
+            0.913
+          ]
+        },
+        "leakage_inflation": 0.333
+      },
+      "resnet": {
+        "by_session_segacc": {
+          "mean": 0.537,
+          "std": 0.056,
+          "vals": [
+            0.631,
+            0.548,
+            0.535,
+            0.458,
+            0.512
+          ]
+        },
+        "by_segment_segacc": {
+          "mean": 0.905,
+          "std": 0.019,
+          "vals": [
+            0.906,
+            0.885,
+            0.918,
+            0.883,
+            0.933
+          ]
+        },
+        "leakage_inflation": 0.368
+      }
+    }
+  },
+  "verdict": "On ShipsEar (3-class, >=2 sessions each), a by-segment (leaky) split inflates segment-level balanced accuracy by +0.313 to +0.445 over a by-session (honest) split across MLP/CNN2D/ResNet -- replicating, on a second corpus, the recording-level leakage found on IARA (+0.27 to +0.49). Because the grouping here is a coarser session than a recording, this is a conservative confirmation."
+}

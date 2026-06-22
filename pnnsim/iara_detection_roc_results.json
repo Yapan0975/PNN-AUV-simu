@@ -1,0 +1,55 @@
+{
+  "task": "ship (cargo/tanker/tug/special) vs background detection, IARA leakage-free, recording-level score pooled over 5 seeds",
+  "metric": "ROC-AUC and average precision (AP); recording bootstrap 95% CI",
+  "resnet": {
+    "n_points": 340,
+    "roc_auc": 0.882,
+    "roc_auc_ci95": [
+      0.826,
+      0.932
+    ],
+    "avg_precision": 0.955,
+    "avg_precision_ci95": [
+      0.924,
+      0.979
+    ],
+    "pd_at_pfa_0.01": 0.119,
+    "pd_at_pfa_0.05": 0.27,
+    "pd_at_pfa_0.1": 0.641,
+    "prevalence_ship": 0.794
+  },
+  "pnn_pat": {
+    "n_points": 340,
+    "roc_auc": 0.793,
+    "roc_auc_ci95": [
+      0.73,
+      0.848
+    ],
+    "avg_precision": 0.924,
+    "avg_precision_ci95": [
+      0.885,
+      0.955
+    ],
+    "pd_at_pfa_0.01": 0.019,
+    "pd_at_pfa_0.05": 0.296,
+    "pd_at_pfa_0.1": 0.515,
+    "prevalence_ship": 0.794
+  },
+  "energy": {
+    "n_points": 225,
+    "roc_auc": 0.689,
+    "roc_auc_ci95": [
+      0.58,
+      0.795
+    ],
+    "avg_precision": 0.857,
+    "avg_precision_ci95": [
+      0.791,
+      0.923
+    ],
+    "pd_at_pfa_0.01": 0.006,
+    "pd_at_pfa_0.05": 0.033,
+    "pd_at_pfa_0.1": 0.183,
+    "prevalence_ship": 0.8
+  }
+}
