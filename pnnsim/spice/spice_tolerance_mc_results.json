@@ -1,0 +1,19 @@
+{
+  "what": "Component-tolerance Monte-Carlo of the SPICE bank (R +-1%, C +-5%, GBW +-20%)",
+  "k_device_instances": 16,
+  "split_seeds_per_instance": 8,
+  "nominal_5class_bal": 0.398,
+  "tolerance_5class_bal_mean": 0.377,
+  "tolerance_5class_bal_std": 0.012,
+  "tolerance_5class_bal_range": [
+    0.348,
+    0.396
+  ],
+  "realized_Q_mean": 39.6,
+  "realized_Q_range": [
+    34.6,
+    43.2
+  ],
+  "verdict": "Across 16 component-tolerance device instances (R +-1%, C +-5%, GBW +-20%) the five-class accuracy is 0.377 +- 0.012 (nominal 0.398), and the realized Q spans 35-43: classification is robust to realistic component tolerances, with the Q spread the dominant non-ideality.",
+  "wall_clock_s": 75.9
+}

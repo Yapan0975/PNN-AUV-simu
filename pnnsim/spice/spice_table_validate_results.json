@@ -1,0 +1,38 @@
+{
+  "what": "SPICE validation of Table I's frozen/PAT rows (P1.1): same per-seed modal parameters mapped into the circuit, vs closed-form",
+  "n_seeds": 15,
+  "conditions": {
+    "frozen": {
+      "closed_mean": 0.373,
+      "spice_mean": 0.367,
+      "table_I_value": 0.378,
+      "circuit_vs_closed": {
+        "mean_diff": -0.0067,
+        "ci95": [
+          -0.0145,
+          0.0012
+        ],
+        "tost_margin": 0.02,
+        "tost_p": 0.0013,
+        "equivalent": true
+      }
+    },
+    "pat": {
+      "closed_mean": 0.384,
+      "spice_mean": 0.39,
+      "table_I_value": 0.386,
+      "circuit_vs_closed": {
+        "mean_diff": 0.0057,
+        "ci95": [
+          -0.0036,
+          0.0151
+        ],
+        "tost_margin": 0.02,
+        "tost_p": 0.0028,
+        "equivalent": true
+      }
+    }
+  },
+  "verdict": "For the frozen reservoir the circuit-realized bank scores 0.367 vs the closed-form 0.373 (Table I 0.378); circuit~closed TOST p=0.0013. Same for PAT (0.39 vs 0.384, Table I 0.386). The SPICE validation therefore covers the trained/perturbed models Table I reports, not only the nominal bank.",
+  "wall_clock_s": 85.2
+}

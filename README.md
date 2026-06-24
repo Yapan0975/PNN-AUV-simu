@@ -86,8 +86,10 @@ Each `*_results.json` is the exact output consumed by the manuscript.
 
 ## Citation
 
-A `CITATION.cff` / DOI will be added on acceptance. Until then please cite the
-*Applied Acoustics* manuscript above.
+A `CITATION.cff` / DOI will be added on acceptance. This `spice` branch supports
+the **device Letter** (the physical-reservoir front end and its energy–accuracy
+design space); the leakage-free UATR benchmark is a companion paper. The Letter's
+numbers are the `spice_*` result JSONs under `pnnsim/spice/`.
 
 ## License
 
