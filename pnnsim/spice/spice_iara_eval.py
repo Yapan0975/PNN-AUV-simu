@@ -37,6 +37,7 @@ import core
 import iara_dataset as iara
 from phase0_iara_stats import (rec_predict, balanced_acc, macro_f1,
                                cluster_bootstrap_ci)
+from scipy import stats as sstats
 
 DATA = PN.parent / "IARA-data"
 CLASSES = ("Background", "Cargo", "Tanker", "Tug", "Special Craft")
@@ -128,6 +129,7 @@ def main():
               ("spice_shape", Hsq_spice, False, Qnom),
               ("spice_noisy", Hsq_spice, True, Qmeas)]
     sweep = {}
+    perseed5 = {}
     for kk in (2, 3, 4, 5):
         Xs, ys, rs = subset(X, y, rec, kk)
         sweep[kk] = {}
@@ -139,6 +141,8 @@ def main():
                                   Hsq_t, kk, s, add_noise=noise, Qvec=Qv)
                 bals.append(balanced_acc(p, t, kk)); f1s.append(macro_f1(p, t, kk))
                 ppt.append((p, t))
+            if kk == 5:
+                perseed5[name] = list(bals)
             lo, hi = cluster_bootstrap_ci(ppt, kk)
             sweep[kk][name] = {"bal_mean": round(float(np.mean(bals)), 3),
                                "bal_std": round(float(np.std(bals)), 3),
@@ -151,6 +155,37 @@ def main():
     # head-to-head delta at 5-class
     i5, s5, sn5 = (sweep[5]["ideal_shape"]["bal_mean"], sweep[5]["spice_shape"]["bal_mean"],
                   sweep[5]["spice_noisy"]["bal_mean"])
+
+    # PAIRED equivalence test: circuit (spice_shape) vs abstract (ideal_shape), 5-class.
+    # Same seeds/splits/readout init -> the per-seed accuracies are paired; only Hsq differs.
+    di = np.array(perseed5["ideal_shape"]); ds = np.array(perseed5["spice_shape"])
+    diff = ds - di
+    nseed = len(diff); sd = float(diff.std(ddof=1))
+    mean_d = float(diff.mean()); sem = sd / np.sqrt(nseed) if sd > 0 else 0.0
+    tci = sstats.t.interval(0.95, nseed - 1, loc=mean_d, scale=sem) if sem > 0 else (mean_d, mean_d)
+    mde = float(sstats.t.ppf(0.975, nseed - 1) * sem) if sem > 0 else 0.0
+    margin = 0.02   # +-0.02 balanced-accuracy equivalence margin (pre-stated)
+    if sem > 0:
+        p_lo = 1 - sstats.t.cdf((mean_d + margin) / sem, nseed - 1)   # H0: diff <= -margin
+        p_hi = sstats.t.cdf((mean_d - margin) / sem, nseed - 1)       # H0: diff >= +margin
+        tost_p = float(max(p_lo, p_hi)); equiv = bool(tost_p < 0.05)
+    else:
+        tost_p = 0.0; equiv = True
+    equivalence = {
+        "n_seeds": nseed, "mean_diff_spice_minus_ideal": round(mean_d, 4),
+        "paired_ci95": [round(float(tci[0]), 4), round(float(tci[1]), 4)],
+        "min_detectable_diff": round(mde, 4),
+        "tost_margin": margin, "tost_p": round(tost_p, 4),
+        "equivalent_within_margin": equiv,
+        "verdict": (f"Circuit and abstract front ends are statistically EQUIVALENT within +-{margin} "
+                    f"balanced accuracy (TOST p={tost_p:.3f}); paired diff {mean_d:+.4f} "
+                    f"(95% CI [{tci[0]:.4f},{tci[1]:.4f}], min detectable {mde:.4f})."
+                    if equiv else
+                    f"No difference detected (paired diff {mean_d:+.4f}, CI [{tci[0]:.4f},{tci[1]:.4f}]) "
+                    f"but TOST does NOT establish equivalence within +-{margin} (p={tost_p:.3f}); "
+                    f"the test resolves differences of {mde:.4f}.")}
+    print(f"[spice-eval] equivalence: diff {mean_d:+.4f} CI{equivalence['paired_ci95']} "
+          f"MDE {mde:.4f} TOST_p {tost_p:.3f} equiv={equiv}", flush=True)
     res = {
         "what": "Circuit-level (ngspice) reservoir vs abstract closed-form reservoir on real IARA",
         "dataset": "IARA (Zenodo 10.5281/zenodo.15758636), recording-level 30% test, 15 seeds",
@@ -161,6 +196,7 @@ def main():
         "granularity_sweep": {str(k): v for k, v in sweep.items()},
         "delta_5class_spice_minus_ideal": round(s5 - i5, 3),
         "delta_5class_spicenoisy_minus_ideal": round(sn5 - i5, 3),
+        "equivalence_5class": equivalence,
         "analog_frontend_mW_measured": float(d["analog_frontend_mW"]),
         "verdict": (f"At 5-class the circuit-measured reservoir scores {s5:.3f} (noiseless) / "
                     f"{sn5:.3f} (with device noise+ADC) vs the abstract reservoir's {i5:.3f}: "
