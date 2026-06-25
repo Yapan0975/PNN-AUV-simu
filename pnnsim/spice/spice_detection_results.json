@@ -1,0 +1,25 @@
+{
+  "what": "Circuit-mapped ship-vs-background detection (screening figure of merit), ngspice circuit vs closed-form reservoir, 15 seeds, recording-level",
+  "closed_form": {
+    "roc_auc_mean": 0.813,
+    "roc_auc_std": 0.065,
+    "pd_at_pfa_0.05": 0.29,
+    "pd_at_pfa_0.10": 0.515
+  },
+  "ngspice_circuit": {
+    "roc_auc_mean": 0.81,
+    "roc_auc_std": 0.066,
+    "pd_at_pfa_0.05": 0.295,
+    "pd_at_pfa_0.10": 0.509
+  },
+  "circuit_minus_closed_auc": {
+    "mean": -0.0022,
+    "ci95": [
+      -0.0049,
+      0.0005
+    ]
+  },
+  "companion_device_auc": 0.793,
+  "verdict": "Re-mapped through the circuit, the ship-vs-background detector keeps its operating characteristic: ROC-AUC 0.81 (closed-form 0.813; companion device 0.793), Pd 0.295/0.509 at Pfa 0.05/0.10; circuit-minus-closed AUC -0.002 (95% CI [-0.005,0.000]). The screening role is circuit-validated, not only the multi-class accuracy.",
+  "wall_clock_s": 29.6
+}

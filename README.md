@@ -23,10 +23,10 @@ sea-trial measurement**.
 The `spice` branch adds a circuit-level (ngspice) check of the resonator
 reservoir. The abstract transfer function is realised as 32 Tow–Thomas
 state-variable band-pass sections with a datasheet-grounded op-amp macromodel
-(TI OPA2376), simulated in ngspice, and the measured |H|² is fed back into the
+(TI OPA376), simulated in ngspice, and the measured |H|² is fed back into the
 same leakage-free IARA classifier. The circuit reproduces the abstract model's
 accuracy (0.398 vs 0.402, five-class, overlapping CIs) but corrects its energy
-(246 mW measured, not the ~13 mW originally estimated), yielding an honest
+(246 mW datasheet-budgeted, not the ~13 mW originally estimated), yielding an honest
 energy–accuracy–mode design space. Scripts under `pnnsim/spice/`:
 
 | Script (`pnnsim/spice/`) | Artefact |
@@ -35,7 +35,10 @@ energy–accuracy–mode design space. Scripts under `pnnsim/spice/`:
 | `spice_reservoir.py` | extract the 32-mode bank \|H\|² / measured Q / noise / power (writes `spice_reservoir.npz` + JSON) |
 | `spice_iara_eval.py` | circuit \|H\|² vs abstract \|H\|² on real IARA, 15 seeds, recording-level |
 | `spice_mode_sweep.py` | accuracy-vs-power mode-count Pareto (4→32 modes) |
-| `spice_energy_update.py` | energy ledger recomputed with the circuit-measured front end (5.0×/1.46×, d\*=18.5%) |
+| `spice_energy_update.py` | energy ledger recomputed with the datasheet-budgeted front end (5.0×/1.46×, d\*=18.5%) |
+| `spice_table_validate.py` | maps frozen/PAT modal parameters into the circuit (validates the Table-I regimes) |
+| `spice_tolerance_mc.py` | R/C/GBW component-tolerance Monte-Carlo (16 device instances) |
+| `spice_detection.py` | circuit-mapped ship-vs-background ROC-AUC / Pd@Pfa (screening) |
 
 **Requires ngspice.** Set the `NGSPICE_DIR` environment variable to your ngspice
 install's `Library` directory — the one containing `bin/ngspice_con.exe` and
