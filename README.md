@@ -4,7 +4,8 @@ Simulation and benchmark code for the paper:
 
 > **A Leakage-Free Multi-Method Benchmark for Underwater Acoustic Target Recognition,
 > and an Energy–Accuracy Analysis of a Simulated Physical-Reservoir Sensing Front End**
-> (manuscripts in preparation, 2026).
+> Split into two 2026 papers: a leakage-free UATR benchmark (companion) and this
+> device Letter on the physical-reservoir front end (the `spice` branch).
 
 This repository contains every simulation script and the per-claim raw result
 (`*_results.json`) that each number, table, and figure in the paper is computed
