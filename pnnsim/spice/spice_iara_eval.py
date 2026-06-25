@@ -11,7 +11,7 @@ Three front ends, identical everywhere else:
 
 If ideal ~= spice the abstract reservoir is a FAITHFUL stand-in for the real
 filter SHAPES (validates the classification claim); the correction the circuit
-forces is then on ENERGY (246 mW measured vs 13 mW guessed), not accuracy.
+forces is then on ENERGY (246 mW budgeted vs 13 mW guessed), not accuracy.
 
 Outputs: spice_iara_eval_results.json, spice_iara_eval_figure.png
 Run:  py spice_iara_eval.py    (~3-6 min CPU)
@@ -197,13 +197,13 @@ def main():
         "delta_5class_spice_minus_ideal": round(s5 - i5, 3),
         "delta_5class_spicenoisy_minus_ideal": round(sn5 - i5, 3),
         "equivalence_5class": equivalence,
-        "analog_frontend_mW_measured": float(d["analog_frontend_mW"]),
-        "verdict": (f"At 5-class the circuit-measured reservoir scores {s5:.3f} (noiseless) / "
+        "analog_frontend_mW_budgeted": float(d["analog_frontend_mW"]),
+        "verdict": (f"At 5-class the ngspice-circuit reservoir scores {s5:.3f} (noiseless) / "
                     f"{sn5:.3f} (with device noise+ADC) vs the abstract reservoir's {i5:.3f}: "
                     f"a {s5-i5:+.3f}/{sn5-i5:+.3f} change. The abstract model is "
                     f"{'a faithful stand-in for' if abs(s5-i5)<0.03 else 'optimistic about'} "
                     f"the real filter shapes; the circuit forces its correction mainly on ENERGY "
-                    f"({float(d['analog_frontend_mW']):.0f} mW measured vs 13 mW guessed)."),
+                    f"({float(d['analog_frontend_mW']):.0f} mW budgeted vs 13 mW guessed)."),
         "wall_clock_s": round(time.time() - t0, 1),
     }
     (ROOT / "spice_iara_eval_results.json").write_text(json.dumps(res, indent=2), encoding="utf-8")

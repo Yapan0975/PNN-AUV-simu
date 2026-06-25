@@ -4,7 +4,7 @@ and parse its output. No PySpice dependency: we write a .cir, call ngspice_con.e
 -b, and read back wrdata ASCII tables. Robust on Windows / behind a flaky network.
 
 The op-amp is a transparent single-pole macromodel whose parameters are taken from
-a NAMED real low-power op-amp (default: TI OPA2376, GBW 5.5 MHz, A0 134 dB,
+a NAMED real low-power op-amp (default: TI OPA376, GBW 5.5 MHz, A0 134 dB,
 en 7.5 nV/rtHz, Icc 760 uA/ch) so every non-ideality (finite gain-bandwidth Q
 droop, input voltage noise, output clipping, supply current -> power) is grounded
 in a datasheet number, not invented.
@@ -40,7 +40,7 @@ def _env():
 # referred white voltage noise [V/rtHz] injected as the thermal noise of a
 # series resistor Rn = EN^2 / (4kT).  4kT(300K) = 1.656e-20.
 # ---------------------------------------------------------------------------
-OPAMP_SUBCKT = r"""* single-pole op-amp macromodel (params ~ TI OPA2376)
+OPAMP_SUBCKT = r"""* single-pole op-amp macromodel (params ~ TI OPA376)
 .subckt opamp inp inn out PARAMS: GBW=5.5e6 A0=3.16e6 VHI=1.5 VLO=-1.5 EN=7.5e-9
 Rn   inp  np  {EN*EN/1.656e-20}
 G1   0 g  np inn 1

@@ -37,7 +37,7 @@ dc_perd = front_end + nom("classifier_soc") + nom("soc_overhead")  # 1350
 pnn_perd = nom("soc_burst_log")                                 # 15
 amort = nom("recal_amortised") + nom("fallback_amortised")      # 1.5
 
-# analog front-end power per design point (circuit-measured, mW); 12-mode = lean
+# analog front-end power per design point (datasheet-budgeted, mW); 12-mode = lean
 ANALOG = {"full_32mode_Q40": 246.3, "lean_12mode": 95.8, "original_estimate": 13.0}
 
 
@@ -94,13 +94,13 @@ for tag, a in ANALOG.items():
 full, lean = variants["full_32mode_Q40"], variants["lean_12mode"]
 sens = frontend_sensitivity()
 res = {
-    "what": "Energy ledger recomputed with circuit-measured analog front-end power, MC 95% CIs",
+    "what": "Energy ledger recomputed with datasheet-budgeted analog front-end power, MC 95% CIs",
     "digital_unchanged": {"shared_frontend_ADC_DSP_mW": front_end,
                           "continuous_SoC_mW": cont_soc, "continuous_edgeNPU_mW": cont_npu},
     "variants": variants,
     "frontend_sensitivity": sens,
     "headline": (
-        f"With the circuit-measured 246 mW front end (full 32-mode Q=40 bank) the continuous-digital "
+        f"With the datasheet-budgeted 246 mW front end (full 32-mode Q=40 bank) the continuous-digital "
         f"advantage is {full['ratio_vs_SoC']}x vs SoC (95% CI {full['ratio_vs_SoC_ci95']}) and "
         f"{full['ratio_vs_edgeNPU']}x vs an edge NPU (CI {full['ratio_vs_edgeNPU_ci95']}); the duty-cycle "
         f"crossover is {full['crossover_duty_pct']}% (CI {full['crossover_duty_pct_ci95']}). The lean "

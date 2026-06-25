@@ -98,7 +98,7 @@ def _figure(out, knee):
                     textcoords="offset points", xytext=(5, 5), fontsize=8)
     ax.scatter([knee["analog_mW"]], [knee["bal_mean"]], s=130, facecolors="none",
                edgecolors="#cc3333", lw=2, zorder=4, label=f"energy-optimal: {knee['n_modes']} modes")
-    ax.set_xlabel("analog front-end power (mW, circuit-measured)")
+    ax.set_xlabel("analog front-end power (mW, datasheet-budgeted)")
     ax.set_ylabel("IARA 5-class balanced accuracy")
     ax.set_title("Mode-count vs power Pareto (ngspice bank)\nlabels = number of resonator modes", fontsize=9)
     ax.legend(fontsize=8); ax.grid(alpha=0.25)

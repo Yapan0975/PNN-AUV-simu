@@ -1,5 +1,5 @@
 {
-  "what": "Energy ledger recomputed with circuit-measured analog front-end power, MC 95% CIs",
+  "what": "Energy ledger recomputed with datasheet-budgeted analog front-end power, MC 95% CIs",
   "digital_unchanged": {
     "shared_frontend_ADC_DSP_mW": 300.0,
     "continuous_SoC_mW": 1378.0,
@@ -74,5 +74,5 @@
       "ratio_vs_edgeNPU_lean12": 0.98
     }
   },
-  "headline": "With the circuit-measured 246 mW front end (full 32-mode Q=40 bank) the continuous-digital advantage is 5.0x vs SoC (95% CI [3.82, 6.77]) and 1.46x vs an edge NPU (CI [1.16, 2.36]); the duty-cycle crossover is 18.5% (CI [13.0, 24.0]). The lean 12-mode bank (95.8 mW, 0.357 5-class -- it Pareto-dominates the 16-mode point) gives 11.0x/3.22x, crossover 7.2%. The edge-NPU ratio is FRAGILE: it assumes a 300 mW shared front end; for a sub-kHz UATR band a 30-50 mW front end pushes the full-bank edge-NPU ratio below 1 (0.55x), so the robust claim rests on the continuous-SoC comparison and the sub-watt-platform capability argument, not the edge-NPU number."
+  "headline": "With the datasheet-budgeted 246 mW front end (full 32-mode Q=40 bank) the continuous-digital advantage is 5.0x vs SoC (95% CI [3.82, 6.77]) and 1.46x vs an edge NPU (CI [1.16, 2.36]); the duty-cycle crossover is 18.5% (CI [13.0, 24.0]). The lean 12-mode bank (95.8 mW, 0.357 5-class -- it Pareto-dominates the 16-mode point) gives 11.0x/3.22x, crossover 7.2%. The edge-NPU ratio is FRAGILE: it assumes a 300 mW shared front end; for a sub-kHz UATR band a 30-50 mW front end pushes the full-bank edge-NPU ratio below 1 (0.55x), so the robust claim rests on the continuous-SoC comparison and the sub-watt-platform capability argument, not the edge-NPU number."
 }

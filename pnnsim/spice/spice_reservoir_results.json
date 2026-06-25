@@ -1,7 +1,7 @@
 {
   "what": "Circuit-level (ngspice) extraction of the resonator reservoir bank",
   "topology": "Tow-Thomas 3-op-amp state-variable bandpass per mode",
-  "opamp_model": "single-pole macromodel ~ TI OPA2376 (GBW 5.5MHz, A0 134dB, en 7.5nV/rtHz, Icc 760uA/ch)",
+  "opamp_model": "single-pole macromodel ~ TI OPA376 (GBW 5.5MHz, A0 134dB, en 7.5nV/rtHz, Icc 760uA/ch)",
   "n_modes": 32,
   "Q_nominal": 40.0,
   "C_nF": 100.0,
@@ -307,9 +307,9 @@
     "total_opamps": 97,
     "icc_per_ch_uA": 760.0,
     "vsup_V": 3.3,
-    "analog_frontend_mW_measured": 246.3,
+    "analog_frontend_mW_budgeted": 246.3,
     "ledger_guess_afe_bias_readout_mW": 13.0,
     "note": "This REPLACES the energy ledger's ~13 mW guess (afe 6 + bias 4 + readout 3) for the analog front end with a circuit-grounded 246 mW: holding the paper's Q=40 across 32 modes needs 3 op-amps/section, and a real low-power op-amp draws ~760 uA each. The energy advantage shrinks accordingly and motivates a leaner (fewer-mode / lower-Q) design."
   },
-  "wall_clock_s": 1.8
+  "wall_clock_s": 3.2
 }

@@ -7,7 +7,7 @@ For each of the n_modes=32 modes (log-spaced centre frequencies matching core.py
 we build a Tow-Thomas state-variable bandpass section (3 op-amps; the only
 topology that holds the paper's nominal Q=40 against finite op-amp gain-
 bandwidth), run an AC analysis with a single-pole op-amp macromodel parameterised
-after a real low-power part (TI OPA2376: GBW 5.5 MHz, A0 134 dB, en 7.5 nV/rtHz,
+after a real low-power part (TI OPA376: GBW 5.5 MHz, A0 134 dB, en 7.5 nV/rtHz,
 Icc 760 uA/ch), and read |H_m(f)|^2 onto the SAME 256-point linear frequency grid
 the paper's reservoir uses. We also run a .noise analysis per section and account
 the supply power from the op-amp count and datasheet Icc.
@@ -35,7 +35,7 @@ GRID = np.linspace(F_LO, F_HI, N_FREQ)                       # core's freqs
 MODE_F0 = np.logspace(np.log10(F_LO * 1.2), np.log10(F_HI * 0.9), N_MODES)  # core's wm/2pi
 C_FIX = 100e-9                                               # 100 nF integrator caps
 
-# ---- power model (TI OPA2376, low-power precision CMOS) ----
+# ---- power model (TI OPA376, low-power precision CMOS) ----
 ICC_PER_CH = 760e-6     # A, typical supply current per amplifier
 VSUP = 3.3              # V, single 3.3 V supply (rail-to-rail)
 OPAMPS_PER_SECTION = 3  # Tow-Thomas: summer-integrator + integrator + inverter
@@ -83,7 +83,7 @@ def extract_bank():
     summary = {
         "what": "Circuit-level (ngspice) extraction of the resonator reservoir bank",
         "topology": "Tow-Thomas 3-op-amp state-variable bandpass per mode",
-        "opamp_model": "single-pole macromodel ~ TI OPA2376 (GBW 5.5MHz, A0 134dB, en 7.5nV/rtHz, Icc 760uA/ch)",
+        "opamp_model": "single-pole macromodel ~ TI OPA376 (GBW 5.5MHz, A0 134dB, en 7.5nV/rtHz, Icc 760uA/ch)",
         "n_modes": N_MODES, "Q_nominal": Q_NOM, "C_nF": C_FIX * 1e9,
         "mode_f0_target_Hz": [round(float(x), 2) for x in MODE_F0],
         "Q_meas_mean": round(float(Qm_all.mean()), 2),
@@ -96,7 +96,7 @@ def extract_bank():
             "topology_opamps_per_section": OPAMPS_PER_SECTION,
             "total_opamps": n_opamps,
             "icc_per_ch_uA": ICC_PER_CH * 1e6, "vsup_V": VSUP,
-            "analog_frontend_mW_measured": round(p_analog_mW, 1),
+            "analog_frontend_mW_budgeted": round(p_analog_mW, 1),
             "ledger_guess_afe_bias_readout_mW": 13.0,
             "note": ("This REPLACES the energy ledger's ~13 mW guess (afe 6 + bias 4 + readout 3) "
                      f"for the analog front end with a circuit-grounded {p_analog_mW:.0f} mW: holding "

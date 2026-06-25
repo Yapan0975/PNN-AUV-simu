@@ -139,7 +139,7 @@
     "equivalent_within_margin": true,
     "verdict": "Circuit and abstract front ends are statistically EQUIVALENT within +-0.02 balanced accuracy (TOST p=0.001); paired diff -0.0038 (95% CI [-0.0135,0.0059], min detectable 0.0097)."
   },
-  "analog_frontend_mW_measured": 246.276,
-  "verdict": "At 5-class the circuit-measured reservoir scores 0.398 (noiseless) / 0.399 (with device noise+ADC) vs the abstract reservoir's 0.402: a -0.004/-0.003 change. The abstract model is a faithful stand-in for the real filter shapes; the circuit forces its correction mainly on ENERGY (246 mW measured vs 13 mW guessed).",
-  "wall_clock_s": 112.1
+  "analog_frontend_mW_budgeted": 246.276,
+  "verdict": "At 5-class the ngspice-circuit reservoir scores 0.398 (noiseless) / 0.399 (with device noise+ADC) vs the abstract reservoir's 0.402: a -0.004/-0.003 change. The abstract model is a faithful stand-in for the real filter shapes; the circuit forces its correction mainly on ENERGY (246 mW budgeted vs 13 mW guessed).",
+  "wall_clock_s": 116.1
 }
